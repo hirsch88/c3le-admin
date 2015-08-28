@@ -1,0 +1,33 @@
+{
+  "name":            "c3leAdminTs",
+  "version":         "0.0.0",
+  "authors":         [
+    ""
+  ],
+  "description":     "",
+  "main":            "dist/index.html",
+  "license":         "MIT",
+  "ignore":          [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/lib"
+  ],
+  "dependencies":    {
+    "bootstrap":                             "3.3.4",
+    "font-awesome":                          "*",
+    "lodash":                                "*",
+    "moment":                                "*",
+    "bluebird":                              "*",
+    "angular":                               "*",
+    "angular-sanitize":                      "*",
+    "angular-messages":                      "*",
+    "angular-translate":                     "*",
+    "angular-translate-loader-static-files": "*",
+    "angular-ui-router":                     "*"
+  },
+  "devDependencies": {
+    "angular-mocks":    "*",
+    "angular-scenario": "*"
+  }
+}
