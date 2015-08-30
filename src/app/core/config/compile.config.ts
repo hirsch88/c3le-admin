@@ -1,5 +1,6 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 module c3.core.config {
+  'use strict';
 
   /**
    * Compile Config
@@ -16,7 +17,7 @@ module c3.core.config {
 
 
   angular
-    .module(config.ID.Compile)
+    .module(config.ID.Compile, [])
     .config(CompileConfig);
 
 }

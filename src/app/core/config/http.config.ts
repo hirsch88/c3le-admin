@@ -1,5 +1,6 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 module c3.core.config {
+  'use strict';
 
   /**
    * Http Config
@@ -19,7 +20,7 @@ module c3.core.config {
 
 
   angular
-    .module(config.ID.Http)
+    .module(config.ID.Http, [])
     .config(HttpConfig);
 
 }

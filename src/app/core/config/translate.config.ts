@@ -1,5 +1,6 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 module c3.core.config {
+  'use strict';
 
   /**
    * Translate Config
@@ -21,7 +22,7 @@ module c3.core.config {
 
 
   angular
-    .module(config.ID.Translate)
+    .module(config.ID.Translate, [])
     .config(TranslateConfig);
 
 }

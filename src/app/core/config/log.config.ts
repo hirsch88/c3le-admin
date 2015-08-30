@@ -1,5 +1,6 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 module c3.core.config {
+  'use strict';
 
   /**
    * Log Config
@@ -18,7 +19,7 @@ module c3.core.config {
 
 
   angular
-    .module(config.ID.Log)
+    .module(config.ID.Log, [])
     .config(LogConfig);
 
 }

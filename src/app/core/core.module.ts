@@ -9,7 +9,7 @@ module c3.core {
     .module(Namespace, [
       `${Namespace}.constants`,
       `${Namespace}.config`,
-      `${Namespace}.router`,
+      //`${Namespace}.router`,
       `${Namespace}.util`
     ]);
 }

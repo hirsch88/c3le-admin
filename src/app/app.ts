@@ -11,6 +11,7 @@ module c3 {
 
       // Third-Party Libs
       'pascalprecht.translate',
+      'ui.router',
 
       // Configs, middleware, run...
       'c3.core',
