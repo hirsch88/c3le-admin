@@ -8,10 +8,12 @@ module c3 {
       // AngularJS Libs
       'ngSanitize',
       'ngMessages',
+      'ngAnimate',
 
       // Third-Party Libs
       'pascalprecht.translate',
       'ui.router',
+      'angular-loading-bar',
 
       // Configs, middleware, run...
       'c3.core',

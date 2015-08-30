@@ -22,7 +22,9 @@ module c3.core.config {
 
 
   angular
-    .module(config.ID.Translate, [])
+    .module(config.ID.Translate, [
+      'pascalprecht.translate'
+    ])
     .config(TranslateConfig);
 
 }

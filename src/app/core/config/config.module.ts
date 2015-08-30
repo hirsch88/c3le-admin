@@ -9,6 +9,9 @@ module c3.core.config {
     Compile: `${Namespace}.Compile`,
     Translate: `${Namespace}.Translate`,
     Http: `${Namespace}.Http`,
+    Promise: `${Namespace}.Promise`,
+    Router: `${Namespace}.Router`,
+    LoadingBar: `${Namespace}.LoadingBar`,
     Log: `${Namespace}.Log`
   };
 
@@ -17,6 +20,9 @@ module c3.core.config {
       ID.Compile,
       ID.Translate,
       ID.Http,
+      ID.Promise,
+      ID.Router,
+      ID.LoadingBar,
       ID.Log
     ]);
 }

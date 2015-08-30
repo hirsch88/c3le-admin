@@ -1,5 +1,5 @@
 {
   "environment": "production",
-  "baseUrl":     "http://api.app:1337/api/",
-  "language":    "en"
+  "baseUrl":     "http://api.c3le.ch",
+  "language":    "de"
 }
