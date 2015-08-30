@@ -14,7 +14,7 @@
     "app/lib"
   ],
   "dependencies":    {
-    "bootstrap":                             "3.3.4",
+    "bootstrap":                             "4.0.0-alpha",
     "font-awesome":                          "*",
     "lodash":                                "*",
     "moment":                                "*",
