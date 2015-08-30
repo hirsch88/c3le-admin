@@ -1,33 +1,33 @@
 {
-  "name":            "c3leAdminTs",
-  "version":         "0.0.0",
-  "authors":         [
+  "name": "c3leAdminTs",
+  "version": "0.0.0",
+  "authors": [
     ""
   ],
-  "description":     "",
-  "main":            "dist/index.html",
-  "license":         "MIT",
-  "ignore":          [
+  "description": "",
+  "main": "dist/index.html",
+  "license": "MIT",
+  "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "app/lib"
   ],
-  "dependencies":    {
-    "bootstrap":                             "4.0.0-alpha",
-    "font-awesome":                          "*",
-    "lodash":                                "*",
-    "moment":                                "*",
-    "bluebird":                              "*",
-    "angular":                               "*",
-    "angular-sanitize":                      "*",
-    "angular-messages":                      "*",
-    "angular-translate":                     "*",
+  "dependencies": {
+    "angular": "*",
+    "angular-messages": "*",
+    "angular-sanitize": "*",
+    "angular-translate": "*",
     "angular-translate-loader-static-files": "*",
-    "angular-ui-router":                     "*"
+    "angular-ui-router": "*",
+    "bluebird": "*",
+    "bootstrap": "4.0.0-alpha",
+    "font-awesome": "~4.4.0",
+    "lodash": "*",
+    "moment": "*"
   },
   "devDependencies": {
-    "angular-mocks":    "*",
+    "angular-mocks": "*",
     "angular-scenario": "*"
   }
 }
