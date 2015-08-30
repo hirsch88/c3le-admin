@@ -1,7 +1,8 @@
-body {
-  padding-top:    70px;
-  padding-bottom: 30px;
-}
+
+@import "custom";
+@import "bootstrap/bootstrap";
+
+
 
 * {
   -webkit-font-smoothing: antialiased;

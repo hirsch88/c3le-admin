@@ -22,14 +22,18 @@ gulp.task('sass', function () {
 
   return gulp
     .src(mainSassFile)
-    .pipe(sourcemaps.init()) 
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.init())
+    //.pipe(sass().on('error', sass.logError))
+    .pipe(sass({
+      style: 'compressed',
+      errLogToConsole: false
+    }))
     .pipe(autoprefixer({
             browsers: projectConfig.autoprefixer.browsers,
             cascade: false,
             remove: projectConfig.autoprefixer.remove
     }))
-    .pipe(sourcemaps.write()) 
+    .pipe(sourcemaps.write())
     .pipe($.rename(cssFile))
     .pipe(gulp.dest(mainCssDir))
     .pipe(reload({stream: true}));
