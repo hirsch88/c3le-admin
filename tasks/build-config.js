@@ -13,7 +13,7 @@ var chalk = require('chalk');
 gulp.task('build-config', function() {
   var source = path.join(projectConfig.path.srcDir, projectConfig.path.assets.configDir);
   var destination = path.join(projectConfig.path.srcDir, projectConfig.path.app.coreDir, 'constants'); 
-    var fileName = 'config.constant.js'; 
+    var fileName = 'config.constant.ts'; 
 
   var env = getEnvironment();
   var context = getJsonConfig();

@@ -7,7 +7,7 @@
   "cssExtension":    "Sass",
   "styleSourcemaps": "true",
   "autoPrefixr":      "true",
-  "language":        "JavaScript",
+  "language":        "TypeScript",
   "private":         true,
   "dependencies":    {},
   "devDependencies": {
@@ -51,7 +51,11 @@
     "lodash":                 "^3.5.0",
     "bower-files":            "^3.3.0",
     "main-bower-files":       "^2.5.0",
-    "wiredep":                "^2.2.2"
+    "wiredep":                "^2.2.2",
+    "tsd": "^0.6.0",
+    "typescript": "~1.4.0",
+    "gulp-typescript": "^2.7.5",
+    "gulp-tslint": "^2.0.0"
   },
   "scripts":         {
     "test": "echo \"Error: no test specified\" && exit 1"

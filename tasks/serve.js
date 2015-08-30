@@ -24,7 +24,7 @@ gulp.task('serve', ['build'], function () {
 
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.templates), ['inject', 'bootlint', 'htmllint', browserSync.reload]);
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass', browserSync.reload]);
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts), ['inject', 'jshint', browserSync.reload]);
+  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts.replace(/\.js$/, '.ts')), ['inject',  browserSync.reload]);
   gulp.watch('./bower.json', ['inject', browserSync.reload]);
 
 });

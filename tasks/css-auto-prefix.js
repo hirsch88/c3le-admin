@@ -5,7 +5,7 @@ var path = require('path');
 var projectConfig = require(process.cwd() + '/project.config.js')();
 var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('css-auto-prefix',['sass'], function () {
+gulp.task('css-auto-prefix',['sass', 'ts' ], function () {
   var mainCssDir = path.join(projectConfig.path.srcDir, projectConfig.path.assets.cssDir);
   var cssFile = projectConfig.pkg.name + '.css';
 

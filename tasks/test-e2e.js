@@ -8,7 +8,7 @@ var path = require('path');
 /**
  * TEST E2E
  */
-gulp.task('test-e2e', function () {
+gulp.task('test-e2e', ['ts'] , function () {
 
   var testFiles = projectConfig.karma.files;
   testFiles.push(projectConfig.path.test.e2e.specs);

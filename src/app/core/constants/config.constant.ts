@@ -15,9 +15,9 @@ module c3.core.constants {
   angular
     .module(ID.AppConfig, [])
     .constant(ID.AppConfig, {
-      ENVIRONMENT: '<%= environment %>',
-      BASE_URL:    '<%= baseUrl %>',
-      LANGUAGE:    '<%= language %>'
+      ENVIRONMENT: 'development',
+      BASE_URL:    'http://localhost:1337/api/',
+      LANGUAGE:    'en'
     });
 
 }
