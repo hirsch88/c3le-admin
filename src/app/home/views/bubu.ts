@@ -29,8 +29,6 @@ module c3.home.views {
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class BubuController extends core.util.ViewController {
-    disposes: Function[] = [];
-
     title = 'Bubu!';
 
     static $inject = [
@@ -48,6 +46,7 @@ module c3.home.views {
     }
 
     private init() {
+      ;
     }
 
   }

@@ -9,6 +9,9 @@ module c3.layout.directives {
     controller = ID.PageHeaderController;
     controllerAs = 'pageHeader';
     bindToController = true;
+    scope = {
+      pageTitle: '='
+    }
   }
 
   export interface IPageHeaderController {

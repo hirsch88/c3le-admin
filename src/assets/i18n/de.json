@@ -1,16 +1,22 @@
 {
-  "HOME": {
+  "COMMON":  {
+    "PLEASE_WAIT": "Bitte warten!"
+  },
+  "HOME":    {
     "TITLE": "Home"
   },
-  "BUBU": {
+  "BUBU":    {
     "TITLE": "Bubu"
+  },
+  "LAYOUT":  {
+    "PAGE_LOADING": "Seite wird geladen..."
   },
   "SIDEBAR": {
     "ENVIRONMENTS": {
-      "eventAdmin": "Event Admin",
-      "clubAdmin": "Verein Admin",
-      "eventCheckIn": "Event Check-In",
-      "clubVitis": "Verein Vitis",
+      "eventAdmin":     "Event Admin",
+      "clubAdmin":      "Verein Admin",
+      "eventCheckIn":   "Event Check-In",
+      "clubVitis":      "Verein Vitis",
       "clubInstructor": "Verein Instructor"
     }
   }

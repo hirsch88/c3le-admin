@@ -1,32 +1,16 @@
-<div class="c3-page-header">
-  <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
-    <span class="navbar-brand">{{vm.title}}</span>
+<c3-page-header page-title="'HOME.TITLE'"></c3-page-header>
 
-    <ul class="nav navbar-nav pull-right">
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-user"></i>
-          User
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fa fa-sign-out"></i>
-          Logout
-        </a>
-      </li>
-    </ul>
-
-  </nav>
-</div>
-<div class="c3-page-body container-fluid">
+<c3-page-body page-promise="vm.bubuPromise">
+  <h1>Bubu</h1>
   <button class="btn btn-primary" ng-click="vm.submit()">
     <i class="fa fa-android"></i>
     Press Me :-)
   </button>
   <button class="btn btn-info" ui-sref="admin.bubu">go bubu</button>
-</div>
 
+  <pre>{{vm.bubuPromise|json}}</pre>
+
+</c3-page-body>
 
 
 

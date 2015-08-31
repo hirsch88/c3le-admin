@@ -32,20 +32,31 @@ module c3.home.views {
 
     title = 'Hirsch says hi!';
     counter: number = 0;
+    bubuPromise: Promise<{}>;
 
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
+      '$timeout',
       core.util.ID.EventHandler
     ];
 
-    constructor($scope, eventHandler) {
+    constructor($scope, private $timeout, eventHandler) {
       super($scope, eventHandler);
       this.init();
     }
 
     private init() {
       this.addListener('bubu', this.onSomeEvent);
+      this.bubuPromise = this.loadBubu();
+    }
+
+    loadBubu() {
+      return new Promise((resolve, reject) => {
+        this.$timeout(() => {
+          resolve('wuhuu');
+        }, 2000);
+      });
     }
 
     // PUBLIC API /////////////////////////////////////////////

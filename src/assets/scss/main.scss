@@ -6,14 +6,11 @@
 @import "font-awesome/font-awesome";
 
 /**
- * VARIABLES
- */
-$header-height: 3.365rem;
-$sidebar-width: 12rem;
-
-/**
  * COMPONENTS
  */
+@import "variables";
 @import "base";
 @import "sidebar";
 @import "page";
+@import "loadingBar";
+@import "spinner";

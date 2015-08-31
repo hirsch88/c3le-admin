@@ -6,23 +6,24 @@ module c3.layout.directives {
   class PageBodyDirective implements angular.IDirective {
     restrict = 'E';
     templateUrl = 'app/layout/directives/pageBody.directive.html';
-    controller = ID.PageBodyController;
-    controllerAs = 'pageBody';
-    bindToController = true;
+    //controller = ID.PageBodyController;
+    //controllerAs = 'pageBody';
+    //bindToController = true;
+    transclude = true;
+    scope = {
+      pagePromise: '='
+    };
   }
 
-  export interface IPageBodyController {
-  }
-
-  class PageBodyController implements IPageBodyController {
-    static $inject = [];
-    constructor() {
-      // TODO
-    }
-  }
+  //class PageBodyController {
+  //  static $inject = [];
+  //  constructor() {
+  //    // TODO
+  //  }
+  //}
 
   angular
     .module(ID.PageBody, [])
-    .directive('c3PageBody', () => new PageBodyDirective())
-    .controller(ID.PageBodyController, PageBodyController);
+    .directive('c3PageBody', () => new PageBodyDirective());
+    //.controller(ID.PageBodyController, PageBodyController);
 }

@@ -1,0 +1,15 @@
+<div class="c3-page-body">
+
+  <div class="c3-page-spinner" ng-show="pagePromise.isPending()">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 spinner spinner-md"></div>
+        <h2 class="col-xs-12">{{'LAYOUT.PAGE_LOADING'|translate}}</h2>
+        <p class="col-xs-12">{{'COMMON.PLEASE_WAIT'|translate}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid" ng-transclude></div>
+
+</div>
