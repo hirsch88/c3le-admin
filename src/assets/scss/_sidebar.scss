@@ -18,6 +18,10 @@
     left:             0;
     width:            100%;
 
+    .dropdown-item{
+      cursor: pointer;
+    }
+
     .btn-group {
       width:  100%;
       height: $header-height;

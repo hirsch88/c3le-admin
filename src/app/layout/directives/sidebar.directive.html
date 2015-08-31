@@ -2,13 +2,15 @@
   <div class="c3-sidebar-header">
 
     <div class="btn-group">
-      <!--<button type="button" class="btn btn-secondary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-        <!--{{ 'SIDEBAR.ENVIRONMENTS.' + sidebar.selectedEnvironment | translate }}-->
-      <!--</button>-->
+      <button type="button" class="btn btn-secondary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ 'SIDEBAR.ENVIRONMENTS.' + sidebar.selectedEnvironment | translate }}
+      </button>
       <div class="dropdown-menu">
-        <!--<a class="dropdown-item" ng-repeat="env in sidebar.getEnvironments()">-->
-          <!--{{ 'SIDEBAR.ENVIRONMENTS.' + env | translate }}-->
-        <!--</a>-->
+        <a class="dropdown-item" ng-repeat="env in sidebar.getEnvironments()"
+           ng-class="{active: env === sidebar.selectedEnvironment}"
+           ng-click="sidebar.select(env)">
+          {{ 'SIDEBAR.ENVIRONMENTS.' + env | translate }}
+        </a>
       </div>
     </div>
 

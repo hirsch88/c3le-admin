@@ -23,7 +23,7 @@ module c3.home.views {
 
 
   // SIDEBAR ///////////////////////////////////////////////////////////////////////
-  var sidebar = (sidebarService: layout.services.SidebarService) => sidebarService.push('bubu', 'BUBU.TITLE', 'fa-car', 'admin.bubu', 'eventAdmin');
+  var sidebar = (sidebarService: layout.services.SidebarService) => sidebarService.push('bubu', 'BUBU.TITLE', 'fa-car', 'admin.bubu', 'clubAdmin');
   sidebar.$inject = [layout.services.ID.SidebarService];
 
 

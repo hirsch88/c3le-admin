@@ -8,10 +8,10 @@
   "SIDEBAR": {
     "ENVIRONMENTS": {
       "eventAdmin": "Event Admin",
-      "clubAdmin": "Club Admin",
+      "clubAdmin": "Verein Admin",
       "eventCheckIn": "Event Check-In",
-      "clubVitis": "Club Vitis",
-      "clubInstructor": "Club Instructor",
+      "clubVitis": "Verein Vitis",
+      "clubInstructor": "Verein Instructor"
     }
   }
 }

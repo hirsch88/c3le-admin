@@ -23,12 +23,16 @@ module c3.layout.directives {
 
     }
 
+    select(environment: string) {
+      this.selectedEnvironment = environment || 'eventAdmin';
+    }
+
     getEnvironments() {
       return this.sidebarService.getEnvironments();
     }
 
     getList() {
-      return this.sidebarService.get(this.selectedEnvironment) || [];
+      return this.sidebarService.get(this.selectedEnvironment);
     }
 
   }

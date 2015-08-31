@@ -16,7 +16,10 @@ module c3.core.config {
       suffix: '.json'
     });
 
-    $translateProvider.preferredLanguage('en');
+    $translateProvider.preferredLanguage('de');
+    $translateProvider.useSanitizeValueStrategy(null);
+
+
   };
   TranslateConfig.$inject = ['$translateProvider'];
 
