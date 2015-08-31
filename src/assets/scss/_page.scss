@@ -1,31 +1,49 @@
-.c3-page{
+.c3-page {
   margin-left: $sidebar-width;
 
-  .c3-page-header{
-    .navbar-fixed-top{
+  .c3-page-header {
+
+    .navbar-brand {
+      margin-left: $padding;
+    }
+
+    .navbar-fixed-top {
       left: $sidebar-width;
     }
   }
 
 }
 
+.c3-page-body {
+  margin:     $padding * 2;
 
-.c3-page-spinner{
-  position: fixed;
-  top: $header-height;
-  bottom: 0;
-  right: 0;
-  left: $sidebar-width;
+  .padding {
+    padding: $padding;
+  }
+
+  .container-fluid > div, .container-fluid > table{
+    margin-bottom: $padding * 2;
+    background: white;
+  }
+
+}
+
+.c3-page-spinner {
+  position:   fixed;
+  top:        $header-height;
+  bottom:     0;
+  right:      0;
+  left:       $sidebar-width;
 
   text-align: center;
-  background: rgba(255,255,255,0.75);
-  z-index: 2000;
+  background: rgba(255, 255, 255, 0.75);
+  z-index:    2000;
 
-  .spinner{
+  .spinner {
     margin-top: $header-height !important;
   }
 
-  h2{
-    margin-top: 15px;
+  h2 {
+    margin-top: $padding;
   }
 }

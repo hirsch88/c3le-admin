@@ -1,14 +1,52 @@
 <c3-page-header page-title="'HOME.TITLE'"></c3-page-header>
 
 <c3-page-body page-promise="vm.bubuPromise">
-  <h1>Bubu</h1>
-  <button class="btn btn-primary" ng-click="vm.submit()">
-    <i class="fa fa-android"></i>
-    Press Me :-)
-  </button>
-  <button class="btn btn-info" ui-sref="admin.bubu">go bubu</button>
 
-  <pre>{{vm.bubuPromise|json}}</pre>
+  <div class="row">
+    <div class="col-xs-12 padding">
+
+      <h1>Bubu</h1>
+
+      <button class="btn btn-primary" ng-click="vm.submit()">
+        <i class="fa fa-android"></i>
+        Press Me :-)
+      </button>
+
+      <button class="btn btn-info" ui-sref="admin.bubu">go bubu</button>
+
+      <pre>{{vm.bubuPromise|json}}</pre>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <table class="table col-xs-12">
+      <thead>
+      <th class="header">Col1</th>
+      <th class="header">Col2</th>
+      <th class="header">Col3</th>
+      </thead>
+      <tbody>
+      <tr>
+        <td>1</td>
+        <td>ASDF</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>QWET</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>YXCV</td>
+        <td></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
 
 </c3-page-body>
 
