@@ -1,0 +1,10 @@
+.c3-page{
+  margin-left: $sidebar-width;
+
+  .c3-page-header{
+    .navbar-fixed-top{
+      left: $sidebar-width;
+    }
+  }
+
+}

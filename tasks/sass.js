@@ -23,7 +23,6 @@ gulp.task('sass', function () {
   return gulp
     .src(mainSassFile)
     .pipe(sourcemaps.init())
-    //.pipe(sass().on('error', sass.logError))
     .pipe(sass({
       style: 'compressed',
       errLogToConsole: false

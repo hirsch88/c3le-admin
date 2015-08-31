@@ -1,14 +1,19 @@
-
+/**
+ * BOOTSTRAP
+ */
 @import "custom";
 @import "bootstrap/bootstrap";
+@import "font-awesome/font-awesome";
 
+/**
+ * VARIABLES
+ */
+$header-height: 3.365rem;
+$sidebar-width: 12rem;
 
-body{
-  padding-top: 70px;
-  padding-bottom: 30px;
-}
-
-
-* {
-  -webkit-font-smoothing: antialiased;
-}
+/**
+ * COMPONENTS
+ */
+@import "base";
+@import "sidebar";
+@import "page";

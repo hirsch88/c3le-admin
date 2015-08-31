@@ -1,33 +1,33 @@
-<div class="container theme-showcase" role="main">
-  <!-- Main jumbotron for a primary marketing message or call to action -->
-  <div class="jumbotron">
-    <div class="row">
-    <pre class="col-sm-4"
-         style="background: transparent; border: none; font-size: 1.2em; font-weight: bold">
-       /|        |\
-    `__\\        //__'
-        ||      ||
-      \__`\     |'__/
-        `_\\   //_
-        _.,:---;,._
-        \_:     :_/
-          |@. .@|
-          |     |
-           \.-./
-            `-'
-      </pre>
-      <div class="col-sm-8">
-        <h1>{{vm.title}}</h1>
+<div class="c3-page-header">
+  <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
+    <span class="navbar-brand">{{vm.title}}</span>
 
-        <p>You just used the hirsch generator to scaffold your new application</p>
+    <ul class="nav navbar-nav pull-right">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa fa-user"></i>
+          User
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fa fa-sign-out"></i>
+          Logout
+        </a>
+      </li>
+    </ul>
 
-        <button class="btn btn-primary" ng-click="vm.submit()">Press Me :-)</button>
-        <button class="btn btn-info" ui-sref="admin.bubu">go bubu</button>
+  </nav>
+</div>
+<div class="c3-page-content container-fluid">
+  <button class="btn btn-primary" ng-click="vm.submit()">
+    <i class="fa fa-android"></i>
+    Press Me :-)
+  </button>
+  <button class="btn btn-info" ui-sref="admin.bubu">go bubu</button>
+</div>
 
-      </div>
-    </div>
-  </div>
 
-</div> <!-- /container -->
+
 
 
