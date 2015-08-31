@@ -16,8 +16,8 @@ module c3.core.constants {
     .module(ID.AppConfig, [])
     .constant(ID.AppConfig, {
       ENVIRONMENT: 'development',
-      BASE_URL:    'http://localhost:1337/api/',
-      LANGUAGE:    'en'
+      BASE_URL:    'http://api.c3le',
+      LANGUAGE:    'de'
     });
 
 }

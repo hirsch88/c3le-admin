@@ -9,4 +9,5 @@ module c3.home {
     .module(Namespace, [
       `${Namespace}.views`
     ]);
+
 }

@@ -11,8 +11,8 @@ module c3.home.views {
         views: {
           'content': {
             templateUrl: 'app/home/views/home.html',
-            controller: ID.HomeController,
-            controllerAs: 'home'
+            controller: c3.home.views.ID.HomeController,
+            controllerAs: 'vm'
           }
         }
       });
@@ -25,32 +25,41 @@ module c3.home.views {
     title: string;
   }
 
-  class HomeController implements IHomeController, core.util.IEventManageable {
-    offs: Function[] = [];
+  class HomeController extends core.util.EventController {
 
     title = 'Hirsch says hi!';
+    counter: number = 0;
 
-    static $inject = ['$scope', core.util.ID.EventHandler];
+    // CONSTRUCTOR /////////////////////////////////////////////
 
-    constructor($scope, eventHandler: core.util.IEventHandler) {
-      this.offs.push(eventHandler.on('someEvent', this.onSomeEvent));
+    static $inject = [
+      '$scope',
+      core.util.ID.EventHandler
+    ];
 
-      $scope.$on('$destroy', () => this.dispose());
-
+    constructor($scope, eventHandler) {
+      super($scope, eventHandler);
       this.activate();
     }
 
-    private onSomeEvent = (eventObj: any) => {
-      // TODO: handle event
-    };
-
     private activate = () => {
-      // run initialization logic
+      this.addListener('bubu', this.onSomeEvent);
     };
 
-    dispose() {
-      this.offs.forEach(off => off());
+    // PUBLIC API /////////////////////////////////////////////
+
+    submit() {
+      this.fireEvent('bubu', ++this.counter);
     }
+
+    // PRIVATE API ////////////////////////////////////////////
+
+    private onSomeEvent = (eventObj: any) => {
+      console.info('bubu ', eventObj);
+    };
+
+
+
   }
 
   angular

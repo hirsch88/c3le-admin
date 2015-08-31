@@ -11,6 +11,19 @@ var path = require('path');
  * SERVE
  * Creates a webserver and adds some watchers to automatically refresh your browser
  */
+gulp.task('server', function () {
+
+  browserSync({
+    server: {
+      baseDir: projectConfig.path.srcDir,
+      index:   projectConfig.path.main,
+      browser: 'Google Chrome',
+      open:    true
+    }
+  });
+
+});
+
 gulp.task('serve', ['build'], function () {
 
   browserSync({
@@ -22,7 +35,7 @@ gulp.task('serve', ['build'], function () {
     }
   });
 
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.templates), ['inject', 'bootlint', 'htmllint', browserSync.reload]);
+  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.templates), ['inject', browserSync.reload]);
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass', browserSync.reload]);
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts.replace(/\.js$/, '.ts')), ['inject',  browserSync.reload]);
   gulp.watch('./bower.json', ['inject', browserSync.reload]);

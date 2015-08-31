@@ -7,12 +7,15 @@ module c3.home.views {
 
   export var ID = {
     Home: `${Namespace}.Home`,
-    HomeController: `${Namespace}.HomeController`
+    HomeController: `${Namespace}.HomeController`,
+    Bubu: `${Namespace}.Bubu`,
+    BubuController: `${Namespace}.BubuController`
   };
 
   angular
     .module(Namespace, [
-      ID.Home
+      ID.Home,
+      ID.Bubu
     ]);
 
 

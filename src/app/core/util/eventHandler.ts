@@ -6,9 +6,29 @@
 module c3.core.util {
   'use strict';
 
-  export interface IEventManageable {
-    offs: Function[];
-    dispose(): void;
+  //export interface IEventDisposable {
+  //  disposes: Function[];
+  //  dispose(): void;
+  //}
+
+  export class EventController {
+    private disposes: Function[] = [];
+
+    constructor($scope, private eventHandler: EventHandler) {
+      $scope.$on('$destroy', () => this.dispose());
+    }
+
+    protected fireEvent(eventKey: string, eventObject: any) {
+      this.eventHandler.broadcast(eventKey, eventObject);
+    }
+
+    protected addListener(eventKey: string, eventCallback: any) {
+      this.disposes.push(this.eventHandler.on(eventKey, eventCallback));
+    }
+
+    private dispose() {
+      this.disposes.forEach(disposes => disposes());
+    }
   }
 
   export interface IEventHandler {

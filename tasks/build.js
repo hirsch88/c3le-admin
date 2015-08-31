@@ -6,4 +6,4 @@ var gulp = require('gulp');
  * BUILD
  */
 
-gulp.task('build', ['bootlint', 'htmllint', 'inject', 'build-config']);
+gulp.task('build', ['inject', 'build-config']);
