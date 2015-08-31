@@ -28,7 +28,7 @@ module c3.home.views {
 
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
-  class HomeController extends core.util.EventController {
+  class HomeController extends core.util.ViewController {
 
     title = 'Hirsch says hi!';
     counter: number = 0;

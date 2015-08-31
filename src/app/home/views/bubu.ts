@@ -28,7 +28,7 @@ module c3.home.views {
 
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
-  class BubuController {
+  class BubuController extends core.util.ViewController {
     disposes: Function[] = [];
 
     title = 'Bubu!';
@@ -41,31 +41,15 @@ module c3.home.views {
     counter: number = 0;
 
     constructor($scope,
-                private eventHandler: core.util.IEventHandler) {
-
-      $scope.$on('$destroy', () => this.dispose());
-
-      this.disposes.push(eventHandler.on('bubu', this.onSomeEvent));
-
-      this.activate();
+                eventHandler: core.util.EventHandler) {
+      super($scope, eventHandler);
+      this.init();
 
     }
 
-    submit() {
-      this.eventHandler.broadcast('bubu', ++this.counter);
+    private init() {
     }
 
-    private onSomeEvent = (eventObj: any) => {
-      console.info('bubu ', eventObj);
-    };
-
-    private activate = () => {
-      console.warn(this.eventHandler.list());
-    };
-
-    dispose() {
-      this.disposes.forEach(disposes => disposes());
-    }
   }
 
   angular
