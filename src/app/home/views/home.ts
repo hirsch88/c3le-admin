@@ -3,6 +3,7 @@
 module c3.home.views {
   'use strict';
 
+  // STATE /////////////////////////////////////////////////////////////////////////
   var stateConfig = ($stateProvider: ng.ui.IStateProvider) => {
     $stateProvider
       .state('admin.home', {
@@ -19,19 +20,13 @@ module c3.home.views {
   };
   stateConfig.$inject = ['$stateProvider'];
 
-  //////////////////////////////////////////////////////////////////////
-
-  export interface IHomeController {
-    title: string;
-  }
-
+  // CONTROLLER ////////////////////////////////////////////////////////////////////
   class HomeController extends core.util.EventController {
 
     title = 'Hirsch says hi!';
     counter: number = 0;
 
     // CONSTRUCTOR /////////////////////////////////////////////
-
     static $inject = [
       '$scope',
       core.util.ID.EventHandler
@@ -39,21 +34,19 @@ module c3.home.views {
 
     constructor($scope, eventHandler) {
       super($scope, eventHandler);
-      this.activate();
+      this.init();
     }
 
-    private activate = () => {
+    private init() {
       this.addListener('bubu', this.onSomeEvent);
-    };
+    }
 
     // PUBLIC API /////////////////////////////////////////////
-
     submit() {
       this.fireEvent('bubu', ++this.counter);
     }
 
     // PRIVATE API ////////////////////////////////////////////
-
     private onSomeEvent = (eventObj: any) => {
       console.info('bubu ', eventObj);
     };
