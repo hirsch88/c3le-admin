@@ -3,6 +3,8 @@
 module c3.home.views {
   'use strict';
 
+
+  // STATE /////////////////////////////////////////////////////////////////////////
   var stateConfig = ($stateProvider: ng.ui.IStateProvider) => {
     $stateProvider
       .state('admin.bubu', {
@@ -19,13 +21,14 @@ module c3.home.views {
   };
   stateConfig.$inject = ['$stateProvider'];
 
-  //////////////////////////////////////////////////////////////////////
 
-  export interface IBubuController {
-    title: string;
-  }
+  // SIDEBAR ///////////////////////////////////////////////////////////////////////
+  var sidebar = (sidebarService: layout.services.SidebarService) => sidebarService.push('bubu', 'BUBU.TITLE', 'fa-car', 'admin.bubu', 'eventAdmin');
+  sidebar.$inject = [layout.services.ID.SidebarService];
 
-  class BubuController implements IBubuController {
+
+  // CONTROLLER ////////////////////////////////////////////////////////////////////
+  class BubuController {
     disposes: Function[] = [];
 
     title = 'Bubu!';
@@ -66,7 +69,10 @@ module c3.home.views {
   }
 
   angular
-    .module(ID.Bubu, [])
+    .module(ID.Bubu, [
+      layout.services.ID.SidebarService
+    ])
     .config(stateConfig)
+    .run(sidebar)
     .controller(ID.BubuController, BubuController);
 }

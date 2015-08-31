@@ -6775,21 +6775,21 @@ body {
         border-radius: 0;
         height: 3.365rem;
         font-weight: bold; }
-  .c3-sidebar .c3-sidebar-content {
+  .c3-sidebar .c3-sidebar-body {
     position: absolute;
     top: 3.365rem;
     bottom: 0;
     width: 100%; }
-    .c3-sidebar .c3-sidebar-content .nav-item > a {
+    .c3-sidebar .c3-sidebar-body .nav-item > a {
       border-radius: 0;
       color: #818a91; }
-      .c3-sidebar .c3-sidebar-content .nav-item > a i {
+      .c3-sidebar .c3-sidebar-body .nav-item > a i {
         color: #818a91; }
-    .c3-sidebar .c3-sidebar-content a.nav-link.active {
+    .c3-sidebar .c3-sidebar-body a.nav-link.active {
       background: #2b2d2f;
       border-right: 5px solid #0275d8;
       color: #eceeef; }
-      .c3-sidebar .c3-sidebar-content a.nav-link.active i {
+      .c3-sidebar .c3-sidebar-body a.nav-link.active i {
         color: #eceeef; }
 
 .c3-page {

@@ -3,6 +3,7 @@
 module c3.home.views {
   'use strict';
 
+
   // STATE /////////////////////////////////////////////////////////////////////////
   var stateConfig = ($stateProvider: ng.ui.IStateProvider) => {
     $stateProvider
@@ -19,6 +20,12 @@ module c3.home.views {
       });
   };
   stateConfig.$inject = ['$stateProvider'];
+
+
+  // SIDEBAR ///////////////////////////////////////////////////////////////////////
+  var sidebar = (sidebarService: layout.services.SidebarService) => sidebarService.push('home', 'HOME.TITLE', 'fa-home', 'admin.home', 'eventAdmin');
+  sidebar.$inject = [layout.services.ID.SidebarService];
+
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class HomeController extends core.util.EventController {
@@ -52,11 +59,13 @@ module c3.home.views {
     };
 
 
-
   }
 
   angular
-    .module(ID.Home, [])
+    .module(ID.Home, [
+      layout.services.ID.SidebarService
+    ])
     .config(stateConfig)
+    .run(sidebar)
     .controller(ID.HomeController, HomeController);
 }

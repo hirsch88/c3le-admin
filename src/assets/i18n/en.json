@@ -1,3 +1,17 @@
 {
-  "TITLE": "Welcome to this generated App"
+  "HOME": {
+    "TITLE": "Home"
+  },
+  "BUBU": {
+    "TITLE": "Bubu"
+  },
+  "SIDEBAR": {
+    "ENVIRONMENTS": {
+      "eventAdmin": "Event Admin",
+      "clubAdmin": "Club Admin",
+      "eventCheckIn": "Event Check-In",
+      "clubVitis": "Club Vitis",
+      "clubInstructor": "Club Instructor",
+    }
+  }
 }
