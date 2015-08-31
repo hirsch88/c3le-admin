@@ -1,0 +1,26 @@
+.btn-table{
+  text-transform: uppercase;
+  color: lighten($gray-light, 20%);
+  background: transparent;
+  font-size: 0.8rem;
+  font-weight: bold;
+
+
+  &:hover{
+    &.btn-table-primary{
+      color: $brand-primary;
+    }
+    &.btn-table-success{
+      color: $brand-success;
+    }
+    &.btn-table-info{
+      color: $brand-info;
+    }
+    &.btn-table-warning{
+      color: $brand-warning;
+    }
+    &.btn-table-danger{
+      color: $brand-danger;
+    }
+  }
+}
