@@ -2,28 +2,32 @@
 
   <form class="c3-form-signin" name="vm.form" novalidate>
 
+    <pre>{{vm.promise|json}}</pre>
+    <pre>{{vm.email|json}}</pre>
+    <pre>{{vm.password|json}}</pre>
+
     <h2 class="c3-form-signin-heading">{{'SIGNIN.TITLE'|translate}}</h2>
 
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger" role="alert" ng-show="vm.promise.isRejected()">
       <strong>Oh snap!</strong> {{'SIGNIN.MESSAGES.ERROR'|translate}}
     </div>
 
     <label for="inputEmail" class="sr-only">{{'COMMON.LABELS.EMAIL'|translate}}</label>
-    <input type="email" name="email" id="inputEmail" class="form-control"
+    <input type="email" name="email" id="inputEmail" ng-model="vm.email" class="form-control"
            placeholder="{{'COMMON.LABELS.EMAIL'|translate}}" required autofocus>
 
     <label for="inputPassword" class="sr-only">{{'COMMON.LABELS.PASSWORD'|translate}}</label>
-    <input type="password" name="password" id="inputPassword" class="form-control"
+    <input type="password" name="password" id="inputPassword" class="form-control" ng-model="vm.password"
            placeholder="{{'COMMON.LABELS.PASSWORD'|translate}}" required>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="vm.submit()">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="vm.submit()" ng-disabled="vm.form.$invalid">
       {{'COMMON.ACTIONS.SIGNIN'|translate}}
     </button>
 
   </form>
 
 
-  <div class="c3-signin-spinner">
+  <div class="c3-signin-spinner" ng-show="vm.promise.isPending()">
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 spinner spinner-md"></div>

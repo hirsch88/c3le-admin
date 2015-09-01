@@ -11,10 +11,10 @@ module c3.core.config {
    * @constructor
    */
   var HttpConfig = ($httpProvider) => {
-    $httpProvider.defaults.withCredentials = true;
-    if ($httpProvider.defaults.headers['get']) {
-      $httpProvider.defaults.headers['get']['If-Modified-Since'] = '0';
-    }
+    //$httpProvider.defaults.withCredentials = true;
+    //if ($httpProvider.defaults.headers['get']) {
+    //  $httpProvider.defaults.headers['get']['If-Modified-Since'] = '0';
+    //}
   };
   HttpConfig.$inject = ['$httpProvider'];
 

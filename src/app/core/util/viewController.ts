@@ -21,6 +21,7 @@ module c3.core.util {
     private dispose() {
       this.disposes.forEach(disposes => disposes());
     }
+
   }
 
 }

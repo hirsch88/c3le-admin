@@ -63,11 +63,18 @@ module c3.auth.services {
         }, {
           ignoreLoadingBar: true
         })
-          .success(function (res) {
+          .success((res) => {
             this.session = new AuthenticatioSession(res);
             resolve(undefined);
           })
-          .error(reject);
+          .error((data, status, headers, config) => {
+            reject({
+              data: data,
+              status: status,
+              headers: headers,
+              config: config
+            });
+          });
       });
     }
 

@@ -11,7 +11,7 @@ module c3.auth.views {
         url: '/auth/signin',
         views: {
           'content': {
-            templateUrl: 'app/auth/views/signin.html',
+            templateUrl: core.util.Utils.templateUrl(ID.SignIn),
             controller: ID.SignInController,
             controllerAs: 'vm'
           }
@@ -20,31 +20,53 @@ module c3.auth.views {
   };
   stateConfig.$inject = ['$stateProvider'];
 
-
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class SignInController extends core.util.ViewController {
+    form: any;
+    promise: Promise<any>;
 
+    email: string;
+    password: string;
 
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
       core.util.ID.EventHandler,
-      services.ID.AuthenticationService
+      services.ID.AuthenticationService,
+      '$state'
     ];
 
     constructor($scope,
                 eventHandler,
-                private authenticationService: services.AuthenticationService) {
+                private authenticationService: services.AuthenticationService,
+                private $state: ng.ui.IStateService) {
       super($scope, eventHandler);
       this.init();
     }
 
     private init() {
-      ;
+      this.reset();
     }
 
     // PUBLIC API /////////////////////////////////////////////
+    submit() {
+      this.promise = this.authenticationService
+        .signin(this.email, this.password)
+        .then(() => {
+          this.$state.go('admin.home');
+        })
+        .error(() => {
+          this.reset();
+        });
+        //.catch(() => {
+        //  this.reset();
+        //});
+    }
 
+    reset() {
+      this.email = '';
+      this.password = '';
+    }
 
     // PRIVATE API ////////////////////////////////////////////
 
