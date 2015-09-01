@@ -1,5 +1,7 @@
 {
   "environment": "production",
-  "baseUrl":     "http://api.c3le.ch",
-  "language":    "de"
+  "baseUrl": "http://api.c3le.ch",
+  "language": "de",
+  "client_id": "cp",
+  "client_secret": "MBuWYBy5uAGQGXVK"
 }

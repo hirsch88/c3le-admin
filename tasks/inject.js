@@ -27,3 +27,22 @@ gulp.task('inject', ['css-auto-prefix'], function () {
     .pipe(gulp.dest(projectConfig.path.srcDir));
 
 });
+
+//
+//gulp.task('ts-inject', ['ts-compile'], function () {
+//
+//  var source = [];
+//  source.push(path.join(projectConfig.path.srcDir, projectConfig.path.assets.css));
+//
+//  _.forEach(projectConfig.angular.files, function (item) {
+//    source.push(item);
+//  });
+//
+//  return gulp
+//    .src(path.join(projectConfig.path.srcDir, projectConfig.path.main))
+//    .pipe($.inject(gulp.src(source), { relative: true }))
+//    .pipe($.rename(projectConfig.path.main))
+//    .pipe(gulp.dest(projectConfig.path.srcDir));
+//
+//});
+//

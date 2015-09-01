@@ -13,7 +13,7 @@ module c3.layout.views {
       }
     });
   };
-  
+
   stateConfig.$inject = ['$stateProvider'];
 
   angular

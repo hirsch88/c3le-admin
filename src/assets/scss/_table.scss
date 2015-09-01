@@ -1,10 +1,15 @@
+table.table{
+  margin-bottom: 0;
+}
+
 .btn-table{
   text-transform: uppercase;
   color: lighten($gray-light, 20%);
   background: transparent;
   font-size: 0.8rem;
   font-weight: bold;
-
+  padding: 0;
+  margin-left: 5px;
 
   &:hover{
     &.btn-table-primary{

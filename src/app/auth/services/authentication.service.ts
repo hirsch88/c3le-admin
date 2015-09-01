@@ -5,7 +5,7 @@ module c3.auth.services {
 
   // INTERFACE ////////////////////////////////////////////////////////////////////
   interface IAuthenticationService {
-    signin(): Promise<any>;
+    signin(email: string, password: string): Promise<any>;
     signout(): Promise<any>;
     refresh(): Promise<any>;
     hasValidSession(): boolean;
@@ -35,9 +35,9 @@ module c3.auth.services {
 
   // SERVICE ////////////////////////////////////////////////////////////////////
   export class AuthenticationService implements IAuthenticationService {
-    private session: AuthenticatioSession = new AuthenticatioSession();
+    static API_PATH = '/oauth/token';
 
-    static apiPath = '/oauth/token';
+    private session: AuthenticatioSession = new AuthenticatioSession();
 
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
@@ -46,28 +46,51 @@ module c3.auth.services {
     ];
 
     constructor(private $http: ng.IHttpService,
-                private config: core.constants.IAppConfig) {
+                private appConfig: core.constants.IAppConfig) {
 
     }
 
 
     // PUBLIC API /////////////////////////////////////////////
-    signin(): Promise<any> {
+    signin(email: string, password: string): Promise<any> {
       return new Promise((resolve, reject) => {
-
+        this.$http.post(this.appConfig.BASE_URL + AuthenticationService.API_PATH, {
+          'username': email || '',
+          'password': password || '',
+          'grant_type': 'password',
+          'client_id': this.appConfig.CLIENT_ID,
+          'client_secret': this.appConfig.CLIENT_SECRET
+        }, {
+          ignoreLoadingBar: true
+        })
+          .success(function (res) {
+            this.session = new AuthenticatioSession(res);
+            resolve(undefined);
+          })
+          .error(reject);
       });
     }
 
     signout(): Promise<any> {
       return new Promise((resolve, reject) => {
         this.session = new AuthenticatioSession();
-        resolve();
+        resolve(undefined);
       });
     }
 
     refresh(): Promise<any> {
       return new Promise((resolve, reject) => {
-
+        this.$http.post(this.appConfig.BASE_URL + AuthenticationService.API_PATH, {
+          'refresh_token': this.session.refreshToken,
+          'grant_type': 'refresh_token',
+          'client_id': this.appConfig.CLIENT_ID,
+          'client_secret': this.appConfig.CLIENT_SECRET
+        })
+          .success(function (res) {
+            this.session = new AuthenticatioSession(res);
+            resolve(undefined);
+          })
+          .error(reject);
       });
     }
 

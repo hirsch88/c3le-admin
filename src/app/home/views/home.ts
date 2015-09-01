@@ -73,7 +73,7 @@ module c3.home.views {
 
     // PRIVATE API ////////////////////////////////////////////
     private onSomeEvent = (eventObj: any) => {
-      console.info('bubu ', eventObj);
+      console.log('bubu ', eventObj);
     };
 
 

@@ -5,15 +5,15 @@ var path = require('path');
 var projectConfig = require(process.cwd() + '/project.config.js')();
 var autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('css-auto-prefix',['sass', 'ts' ], function () {
+gulp.task('css-auto-prefix', ['sass-compile'], function () {
   var mainCssDir = path.join(projectConfig.path.srcDir, projectConfig.path.assets.cssDir);
   var cssFile = projectConfig.pkg.name + '.css';
 
-    return gulp.src(path.join(mainCssDir, cssFile))
-        .pipe(autoprefixer({
-            browsers: projectConfig.autoprefixer.browsers,
-            cascade: false,
-            remove: projectConfig.autoprefixer.remove
-        }))
-        .pipe(gulp.dest(mainCssDir));
+  return gulp.src(path.join(mainCssDir, cssFile))
+    .pipe(autoprefixer({
+      browsers: projectConfig.autoprefixer.browsers,
+      cascade: false,
+      remove: projectConfig.autoprefixer.remove
+    }))
+    .pipe(gulp.dest(mainCssDir));
 });

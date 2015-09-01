@@ -10,14 +10,18 @@ module c3.core.constants {
     ENVIRONMENT: string;
     BASE_URL: string;
     LANGUAGE: string;
+    CLIENT_ID: string;
+    CLIENT_SECRET: string;
   }
 
   angular
     .module(ID.AppConfig, [])
     .constant(ID.AppConfig, {
       ENVIRONMENT: 'development',
-      BASE_URL:    'http://api.c3le',
-      LANGUAGE:    'de'
+      BASE_URL: 'http://api.c3le',
+      LANGUAGE: 'de',
+      CLIENT_ID: 'event',
+      CLIENT_SECRET: 'bjDz8WLEHtHZqdjF'
     });
 
 }

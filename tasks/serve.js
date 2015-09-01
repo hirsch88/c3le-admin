@@ -11,34 +11,25 @@ var path = require('path');
  * SERVE
  * Creates a webserver and adds some watchers to automatically refresh your browser
  */
-gulp.task('server', function () {
-
-  browserSync({
-    server: {
-      baseDir: projectConfig.path.srcDir,
-      index:   projectConfig.path.main,
-      browser: 'Google Chrome',
-      open:    true
-    }
-  });
-
-});
-
 gulp.task('serve', ['build'], function () {
 
   browserSync({
     server: {
       baseDir: projectConfig.path.srcDir,
-      index:   projectConfig.path.main,
-      browser: 'Google Chrome',
-      open:    true
-    }
+      index: projectConfig.path.main
+    },
+    open: false,
+    reloadDebounce: 300
   });
 
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.templates), ['inject', browserSync.reload]);
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass', browserSync.reload]);
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts.replace(/\.js$/, '.ts')), ['inject',  browserSync.reload]);
-  gulp.watch('./bower.json', ['inject', browserSync.reload]);
+  // Bower
+  gulp.watch('./bower.json', ['bower-inject', reload]);
+
+  // SASS
+  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass', reload]);
+
+  // TypeScript
+  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts.replace(/\.js$/, '.ts')), ['ts', reload]);
 
 });
 
@@ -47,9 +38,9 @@ gulp.task('serve-dist', function () {
   browserSync({
     server: {
       baseDir: projectConfig.path.distDir,
-      index:   projectConfig.path.main,
+      index: projectConfig.path.main,
       browser: 'Google Chrome',
-      open:    true
+      open: true
     }
   });
 

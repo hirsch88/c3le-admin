@@ -10,14 +10,18 @@ module c3.core.constants {
     ENVIRONMENT: string;
     BASE_URL: string;
     LANGUAGE: string;
+    CLIENT_ID: string;
+    CLIENT_SECRET: string;
   }
 
   angular
     .module(ID.AppConfig, [])
     .constant(ID.AppConfig, {
       ENVIRONMENT: '<%= environment %>',
-      BASE_URL:    '<%= baseUrl %>',
-      LANGUAGE:    '<%= language %>'
+      BASE_URL: '<%= baseUrl %>',
+      LANGUAGE: '<%= language %>',
+      CLIENT_ID: '<%= client_id %>',
+      CLIENT_SECRET: '<%= client_secret %>'
     });
 
 }

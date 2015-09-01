@@ -13,8 +13,8 @@ module c3.layout.views {
       }
     });
   };
-  
-  stateConfig.$inject = ['$stateProvider'];  
+
+  stateConfig.$inject = ['$stateProvider'];
 
   angular
     .module(`${Namespace}.Admin`, [])

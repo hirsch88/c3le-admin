@@ -6,15 +6,15 @@ module c3.core.util {
   export var Namespace = 'c3.core.util';
 
   export var ID = {
-    EventHandler: `${Namespace}.EventHandler`
-    //LoggerFactory: `${Namespace}.Logger`,
+    EventHandler: `${Namespace}.EventHandler`,
+    Logger: `${Namespace}.Logger`
     //Backend: `${Namespace}.Backend`
   };
 
   angular
     .module(Namespace, [
-      ID.EventHandler
-      //ID.LoggerFactory,
+      ID.EventHandler,
+      ID.Logger
       //ID.Backend
     ]);
 }

@@ -6,4 +6,5 @@ var gulp = require('gulp');
  * BUILD
  */
 
-gulp.task('build', ['inject', 'build-config']);
+gulp.task('build', ['build-config', 'sass', 'ts']);
+
