@@ -6,13 +6,13 @@ module c3.auth.views {
   export var Namespace = 'c3.auth.views';
 
   export var ID = {
-    Login: `${Namespace}.Login`,
-    LoginController: `${Namespace}.LoginController`
+    SignIn: `${Namespace}.SignIn`,
+    SignInController: `${Namespace}.SignInController`
   };
 
   angular
     .module(Namespace, [
-      ID.Login
+      ID.SignIn
     ]);
 
 

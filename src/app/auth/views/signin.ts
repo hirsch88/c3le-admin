@@ -7,12 +7,12 @@ module c3.auth.views {
   // STATE /////////////////////////////////////////////////////////////////////////
   var stateConfig = ($stateProvider: ng.ui.IStateProvider) => {
     $stateProvider
-      .state('public.login', {
-        url: '/auth/login',
+      .state('public.signin', {
+        url: '/auth/signin',
         views: {
           'content': {
-            templateUrl: 'app/auth/views/login.html',
-            controller: ID.LoginController,
+            templateUrl: 'app/auth/views/signin.html',
+            controller: ID.SignInController,
             controllerAs: 'vm'
           }
         }
@@ -22,7 +22,7 @@ module c3.auth.views {
 
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
-  class LoginController extends core.util.ViewController {
+  class SignInController extends core.util.ViewController {
 
 
     // CONSTRUCTOR /////////////////////////////////////////////
@@ -49,7 +49,7 @@ module c3.auth.views {
   }
 
   angular
-    .module(ID.Login, [])
+    .module(ID.SignIn, [])
     .config(stateConfig)
-    .controller(ID.LoginController, LoginController);
+    .controller(ID.SignInController, SignInController);
 }
