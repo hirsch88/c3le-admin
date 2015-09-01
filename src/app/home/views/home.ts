@@ -38,10 +38,13 @@ module c3.home.views {
     static $inject = [
       '$scope',
       '$timeout',
-      core.util.ID.EventHandler
+      core.util.ID.EventHandler,
+      common.services.ID.NotyService
     ];
 
-    constructor($scope, private $timeout, eventHandler) {
+    constructor($scope,
+                private $timeout, eventHandler,
+                private $noty: common.services.NotyService) {
       super($scope, eventHandler);
       this.init();
     }
@@ -64,6 +67,10 @@ module c3.home.views {
       this.fireEvent('bubu', ++this.counter);
     }
 
+    sayOk() {
+      this.$noty.success('Okay');
+    }
+
     // PRIVATE API ////////////////////////////////////////////
     private onSomeEvent = (eventObj: any) => {
       console.info('bubu ', eventObj);
@@ -74,7 +81,8 @@ module c3.home.views {
 
   angular
     .module(ID.Home, [
-      layout.services.ID.SidebarService
+      layout.services.ID.SidebarService,
+      common.services.ID.NotyService
     ])
     .config(stateConfig)
     .run(sidebar)

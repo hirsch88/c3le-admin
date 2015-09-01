@@ -26,7 +26,8 @@
     "bootstrap": "4.0.0-alpha",
     "font-awesome": "~4.4.0",
     "lodash": "*",
-    "moment": "*"
+    "moment": "*",
+    "noty": "~2.3.6"
   },
   "devDependencies": {
     "angular-mocks": "*",
