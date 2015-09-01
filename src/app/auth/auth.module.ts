@@ -7,6 +7,7 @@ module c3.auth {
 
   angular
     .module(Namespace, [
+      `${Namespace}.services`,
       `${Namespace}.views`,
     ]);
 }
