@@ -28,10 +28,13 @@ module c3.auth.views {
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
-      core.util.ID.EventHandler
+      core.util.ID.EventHandler,
+      services.ID.AuthenticationService
     ];
 
-    constructor($scope, eventHandler) {
+    constructor($scope,
+                eventHandler,
+                private authenticationService: services.AuthenticationService) {
       super($scope, eventHandler);
       this.init();
     }
@@ -49,7 +52,9 @@ module c3.auth.views {
   }
 
   angular
-    .module(ID.SignIn, [])
+    .module(ID.SignIn, [
+      services.ID.AuthenticationService
+    ])
     .config(stateConfig)
     .controller(ID.SignInController, SignInController);
 }
