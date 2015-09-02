@@ -23,7 +23,7 @@ gulp.task('serve', ['build'], function () {
   });
 
   // Bower
-  gulp.watch('./bower.json', ['bower-inject', reload]);
+  gulp.watch('./bower.json', ['bower-inject', 'fonts', reload]);
 
   // SASS
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass', reload]);

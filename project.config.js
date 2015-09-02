@@ -10,6 +10,9 @@ module.exports = function (isGenerator) {
   var bowerFilesJs = [];
   var bowerFilesCss = [];
   var bowerFilesFonts = [];
+
+  //console.log(bowerFiles);
+
   try {
     bowerFilesJs = (!isGenerator) ? wiredep({})['js'] : [];
     bowerFilesCss = (!isGenerator) ? wiredep({})['css'] : [];
@@ -49,6 +52,19 @@ module.exports = function (isGenerator) {
      */
     ignoredModules: [
       'core'
+    ],
+
+    ignoredBowerFiles: [
+      'Materialize/bin/materialize.css'
+    ],
+
+    fonts: [
+      'src/lib/font-awesome/fonts/FontAwesome.otf',
+      'src/lib/font-awesome/fonts/fontawesome-webfont.eot',
+      'src/lib/font-awesome/fonts/fontawesome-webfont.svg',
+      'src/lib/font-awesome/fonts/fontawesome-webfont.ttf',
+      'src/lib/font-awesome/fonts/fontawesome-webfont.woff',
+      'src/lib/font-awesome/fonts/fontawesome-webfont.woff2'
     ],
 
     /*

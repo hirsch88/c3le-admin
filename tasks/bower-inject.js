@@ -12,9 +12,13 @@ var _ = require('lodash');
  */
 gulp.task('bower-inject', function () {
 
+  var bowerFiles = projectConfig.bower.files.main().filter(function (filePath) {
+    return filePath.indexOf(projectConfig.ignoredBowerFiles) < 0 ;
+  });
+
   return gulp
     .src(path.join(projectConfig.path.srcDir, projectConfig.path.main))
-    .pipe($.inject(gulp.src(projectConfig.bower.files.main(), {read: false}), {name: 'bower', relative: true}))
+    .pipe($.inject(gulp.src(bowerFiles, {read: false}), {name: 'bower', relative: true}))
     .pipe($.rename(projectConfig.path.main))
     .pipe(gulp.dest(projectConfig.path.srcDir));
 

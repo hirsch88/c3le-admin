@@ -12,17 +12,18 @@ module c3.common.services.dtos {
 
   // SERVICE ////////////////////////////////////////////////////////////////////
   export class UsersService implements IUsersService, core.interfaces.ICrudable {
-    private field;
+    private backend: common.services.utils.Backend;
+    private eventBackend: common.services.utils.Backend;
 
 
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
-
+      common.services.utils.ID.BackendService
     ];
-    constructor() {
-      this.field = 'value';
+    constructor(backendService) {
+      this.eventBackend = backendService('/events/' + 'c3EventsService.getActiveEventId()' + '/users');
+      this.backend = backendService('/users');
     }
-
 
     // PUBLIC API /////////////////////////////////////////////
     readAll(): Promise<any> {
@@ -54,7 +55,7 @@ module c3.common.services.dtos {
 
   angular
     .module(ID.UsersService, [
-
+      common.services.utils.ID.BackendService
     ])
     .service(ID.UsersService, UsersService);
 }

@@ -57,16 +57,16 @@ module c3.auth.views {
         .then(() => {
           this.$state.go('admin.home');
         })
-        .catch((e) =>
+        .catch(() => {
           this.reset();
         });
-
     }
 
     reset() {
       this.email = '';
       this.password = '';
     }
+
 
   }
 
