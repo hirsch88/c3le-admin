@@ -1,16 +1,16 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-module c3.core.router {
+module c3.event.services {
   'use strict';
 
-  export var Namespace = 'c3.core.router';
+  export var Namespace = 'c3.event.services';
 
   export var ID = {
-    Router: `${Namespace}.Router`
+    EventsService: `${Namespace}.EventsService`
   };
 
   angular
     .module(Namespace, [
-      ID.Router
+      ID.EventsService
     ]);
 }
