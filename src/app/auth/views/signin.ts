@@ -51,16 +51,16 @@ module c3.auth.views {
     // PUBLIC API /////////////////////////////////////////////
     submit() {
       this.promise = this.authenticationService
-        .signin(this.email, this.password)
+        .signin(this.email, this.password);
+
+      this.promise
         .then(() => {
           this.$state.go('admin.home');
         })
-        .error(() => {
+        .catch(() => {
           this.reset();
         });
-        //.catch(() => {
-        //  this.reset();
-        //});
+
     }
 
     reset() {

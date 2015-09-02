@@ -2,10 +2,6 @@
 
   <form class="c3-form-signin" name="vm.form" novalidate>
 
-    <pre>{{vm.promise|json}}</pre>
-    <pre>{{vm.email|json}}</pre>
-    <pre>{{vm.password|json}}</pre>
-
     <h2 class="c3-form-signin-heading">{{'SIGNIN.TITLE'|translate}}</h2>
 
     <div class="alert alert-danger" role="alert" ng-show="vm.promise.isRejected()">
@@ -25,6 +21,8 @@
     </button>
 
   </form>
+
+  <pre>{{vm.promise|json}}</pre>
 
 
   <div class="c3-signin-spinner" ng-show="vm.promise.isPending()">

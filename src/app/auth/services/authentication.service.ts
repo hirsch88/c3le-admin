@@ -67,14 +67,7 @@ module c3.auth.services {
             this.session = new AuthenticatioSession(res);
             resolve(undefined);
           })
-          .error((data, status, headers, config) => {
-            reject({
-              data: data,
-              status: status,
-              headers: headers,
-              config: config
-            });
-          });
+          .error(reject);
       });
     }
 
