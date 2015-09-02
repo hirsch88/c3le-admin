@@ -1,6 +1,6 @@
-/// <reference path="../../../../typings/tsd.d.ts"/>
+/// <reference path="../../../../../typings/tsd.d.ts" />
 
-module c3.common.services {
+module c3.common.services.utils {
   'use strict';
 
   /**

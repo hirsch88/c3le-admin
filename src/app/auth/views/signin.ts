@@ -57,7 +57,7 @@ module c3.auth.views {
         .then(() => {
           this.$state.go('admin.home');
         })
-        .catch(() => {
+        .catch((e) =>
           this.reset();
         });
 
@@ -67,9 +67,6 @@ module c3.auth.views {
       this.email = '';
       this.password = '';
     }
-
-    // PRIVATE API ////////////////////////////////////////////
-
 
   }
 

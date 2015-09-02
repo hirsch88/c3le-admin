@@ -39,12 +39,12 @@ module c3.home.views {
       '$scope',
       '$timeout',
       core.util.ID.EventHandler,
-      common.services.ID.NotyService
+      common.services.utils.ID.NotyService
     ];
 
     constructor($scope,
                 private $timeout, eventHandler,
-                private $noty: common.services.NotyService) {
+                private $noty: common.services.utils.NotyService) {
       super($scope, eventHandler);
       this.init();
     }
@@ -82,7 +82,7 @@ module c3.home.views {
   angular
     .module(ID.Home, [
       layout.services.ID.SidebarService,
-      common.services.ID.NotyService
+      common.services.utils.ID.NotyService
     ])
     .config(stateConfig)
     .run(sidebar)
