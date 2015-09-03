@@ -1,0 +1,11 @@
+{
+  "id":            1,
+  "name":          "12ter 12h Indoorcycling Marathon Basel",
+  "beginDate":     "2015-06-01 00:00:00",
+  "endDate":       "2016-01-01 00:59:59",
+  "isActive":      true,
+  "discountLimit": 74,
+  "created_at":    "2015-08-10 12:15:43",
+  "updated_at":    "2015-08-10 12:15:43",
+  "deleted_at":    null
+}

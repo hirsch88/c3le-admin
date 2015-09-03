@@ -15,13 +15,13 @@ module c3.core.router {
                 private $rootScope: ng.IRootScopeService) {
     }
 
-    use(middleware: Function) {
+
+    use(routeOrMiddleware: any, middleware?: Function) {
       var layer;
-      console.log(arguments);
-      if (typeof middleware !== 'function') {
-        layer = new AppRouterLayer(arguments[1], arguments[0]);
+      if (typeof routeOrMiddleware !== 'function') {
+        layer = new AppRouterLayer(middleware, routeOrMiddleware);
       } else {
-        layer = new AppRouterLayer(middleware);
+        layer = new AppRouterLayer(routeOrMiddleware);
       }
       if (layer) {
         this.stack.push(layer);

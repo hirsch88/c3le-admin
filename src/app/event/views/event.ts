@@ -12,7 +12,7 @@ module c3.event.views {
         url: '/event',
         views: {
           'content': {
-            templateUrl: 'app/event/views/event.html'
+            templateUrl: core.util.Utils.templateUrl(ID.Event)
           }
         },
         data: {

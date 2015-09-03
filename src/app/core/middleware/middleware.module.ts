@@ -6,11 +6,13 @@ module c3.core.middleware {
   export var Namespace = 'c3.core.middleware';
 
   export var ID = {
-    Event: `${Namespace}.Event`
+    Event: `${Namespace}.Event`,
+    Session: `${Namespace}.Session`
   };
 
   angular
     .module(Namespace, [
-      ID.Event
+      ID.Event,
+      ID.Session
     ]);
 }

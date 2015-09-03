@@ -11,7 +11,7 @@ module c3.event.dashboard.views {
         url: '/dashboard',
         views: {
           'content': {
-            templateUrl: 'app/event/dashboard/views/dashboard.html',
+            templateUrl: core.util.Utils.templateUrl(ID.Dashboard),
             controller: ID.DashboardController,
             controllerAs: 'dashboard'
           }
