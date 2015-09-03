@@ -23,6 +23,7 @@ module c3 {
       // App modules with business logic
       'c3.layout',
       'c3.auth',
-      'c3.home'
+      'c3.home',
+      'c3.event'
     ]);
 }

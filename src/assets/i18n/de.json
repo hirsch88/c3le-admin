@@ -151,6 +151,9 @@
   "HOME":    {
     "TITLE": "Home"
   },
+  "DASHBOARD":    {
+    "TITLE": "Dashboard"
+  },
   "BUBU":    {
     "TITLE": "Bubu"
   },
