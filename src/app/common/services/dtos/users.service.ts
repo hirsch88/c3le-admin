@@ -6,7 +6,7 @@ module c3.common.services.dtos {
 
   // INTERFACE ////////////////////////////////////////////////////////////////////
   interface IUsersService {
-
+    getMySelf(): Promise<models.UserModel>;
   }
 
 
@@ -20,12 +20,20 @@ module c3.common.services.dtos {
     static $inject = [
       common.services.utils.ID.BackendService
     ];
-    constructor(backendService) {
-      this.eventBackend = backendService('/events/' + 'c3EventsService.getActiveEventId()' + '/users');
-      this.backend = backendService('/users');
+
+    constructor(backendService: common.services.utils.BackendService) {
+      this.eventBackend = backendService.create('/events/' + 'c3EventsService.getActiveEventId()' + '/users');
+      this.backend = backendService.create('/users');
     }
 
     // PUBLIC API /////////////////////////////////////////////
+    getMySelf(): Promise<models.UserModel> {
+      return this.backend
+        .custom('/self')
+        .read()
+        .then((res) => new models.UserModel(res));
+    }
+
     readAll(): Promise<any> {
       return undefined;
     }
@@ -48,7 +56,6 @@ module c3.common.services.dtos {
 
 
     // PRIVATE API ////////////////////////////////////////////
-
 
 
   }

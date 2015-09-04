@@ -4,9 +4,9 @@
 
     <ul class="nav navbar-nav pull-right">
       <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="#" ng-show="pageHeader.user.isFulfilled()">
           <i class="fa fa-user"></i>
-          User
+          {{pageHeader.user.value().getFullName()}}
         </a>
       </li>
       <li class="nav-item">

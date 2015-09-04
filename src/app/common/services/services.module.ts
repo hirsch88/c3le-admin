@@ -8,6 +8,7 @@ module c3.common.services {
   angular
     .module(Namespace, [
       `${Namespace}.dtos`,
-      `${Namespace}.utils`
+      `${Namespace}.utils`,
+      `${Namespace}.stores`
     ]);
 }
