@@ -15,6 +15,7 @@ module c3.layout.directives {
   }
 
   export interface IPageHeaderController {
+    user: Promise<common.models.UserModel>;
   }
 
   class PageHeaderController implements IPageHeaderController {
@@ -22,10 +23,8 @@ module c3.layout.directives {
 
     static $inject = [
       common.services.stores.ID.MyUserStoreService
-      //common.services.dtos.ID.UsersService
     ];
-    //myUserStoreService: common.services.stores.MyUserStoreService
-    //usersService: common.services.dtos.UsersService
+
     constructor(myUserStoreService: common.services.stores.MyUserStoreService) {
       this.user = myUserStoreService.get();
     }
@@ -34,7 +33,6 @@ module c3.layout.directives {
   angular
     .module(ID.PageHeader, [
       common.services.stores.ID.MyUserStoreService
-      //common.services.dtos.ID.UsersService
     ])
     .directive('c3PageHeader', () => new PageHeaderDirective())
     .controller(ID.PageHeaderController, PageHeaderController);

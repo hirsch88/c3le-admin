@@ -10,6 +10,7 @@ module c3.event {
       `${Namespace}.common`,
       `${Namespace}.views`,
 
-      `${Namespace}.dashboard`
+      `${Namespace}.dashboard`,
+      `${Namespace}.members`
     ]);
 }
