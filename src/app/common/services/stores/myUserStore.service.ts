@@ -6,7 +6,7 @@ module c3.common.services.stores {
 
   // INTERFACE ////////////////////////////////////////////////////////////////////
   interface IMyUserStoreService {
-
+    get(): Promise<models.UserModel>
   }
 
 
