@@ -8,7 +8,7 @@ module c3.event.common.services {
   interface IEventsService {
     //init(): Promise<any>;
     hasActiveEvent(): boolean;
-    getActiveEventId(): string;
+    getActiveEventId(): any;
   }
 
 
@@ -44,28 +44,12 @@ module c3.event.common.services {
       });
     }
 
-
-    //init(): Promise<void> {
-    //  return new Promise((resolve, reject) => {
-    //    this.backend.all()
-    //      .custom('/acitve')
-    //      .read()
-    //      .then((result) => {
-    //        this.pristine = false;
-    //        this.activeEvent = new event.common.models.EventModel(result);
-    //        resolve();
-    //      })
-    //      .catch(() => reject());
-    //  });
-    //}
-
     hasActiveEvent(): boolean {
       return !this.pristine && this.activeEvent !== undefined;
     }
 
-    getActiveEventId(): string {
-      return '';
-      //return this.hasActiveEvent() ? this.activeEvent.id : undefined;
+    getActiveEventId() {
+      return this.hasActiveEvent() ? this.activeEvent.id : '';
     }
 
 

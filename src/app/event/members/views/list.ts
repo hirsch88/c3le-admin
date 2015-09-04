@@ -33,21 +33,23 @@ module c3.event.members.views {
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class ListController extends core.util.ViewController implements IListScope {
-
+    users: Promise<Array<c3.common.models.UserModel>>;
 
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
-      core.util.ID.EventHandler
+      core.util.ID.EventHandler,
+      c3.common.services.dtos.ID.UsersService
     ];
 
-    constructor($scope, eventHandler) {
+    constructor($scope, eventHandler,
+                private usersService: c3.common.services.dtos.UsersService) {
       super($scope, eventHandler);
       this.init();
     }
 
     private init() {
-      ;
+      this.users = this.usersService.readAll();
     }
 
 
@@ -66,7 +68,9 @@ module c3.event.members.views {
 
   angular
     .module(ID.List, [
-      'ui.router'
+      'ui.router',
+      c3.core.util.ID.EventHandler,
+      c3.common.services.dtos.ID.UsersService
     ])
     .config(stateConfig)
     .run(sidebar)

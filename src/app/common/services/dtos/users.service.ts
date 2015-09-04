@@ -20,12 +20,15 @@ module c3.common.services.dtos {
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       common.services.utils.ID.BackendService,
-      core.util.ID.Logger
+      core.util.ID.Logger,
+      event.common.services.ID.EventsService
     ];
 
     constructor(backendService: common.services.utils.BackendService,
-                loggerService: core.util.LoggerService) {
-      this.eventBackend = backendService.create('/events/' + 'c3EventsService.getActiveEventId()' + '/users');
+                loggerService: core.util.LoggerService,
+                eventsService: event.common.services.EventsService) {
+
+      this.eventBackend = backendService.create(`/events/${eventsService.getActiveEventId()}/users`);
       this.backend = backendService.create('/users');
       this.log = loggerService.create(ID.UsersService);
     }
@@ -40,8 +43,14 @@ module c3.common.services.dtos {
       });
     }
 
-    readAll(): Promise<any> {
-      return undefined;
+    readAll() {
+      var promise = this.eventBackend.all().read();
+      return promise.then((r) => {
+        console.log(r);
+        var users = r.map((u) => new models.UserModel(u));
+        this.log.info('readAll', users);
+        return users;
+      });
     }
 
     read(id: string): Promise<any> {
@@ -69,7 +78,8 @@ module c3.common.services.dtos {
   angular
     .module(ID.UsersService, [
       common.services.utils.ID.BackendService,
-      core.util.ID.Logger
+      core.util.ID.Logger,
+      event.common.services.ID.EventsService
     ])
     .service(ID.UsersService, UsersService);
 }
