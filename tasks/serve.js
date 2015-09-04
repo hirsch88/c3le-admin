@@ -12,7 +12,6 @@ var path = require('path');
  * Creates a webserver and adds some watchers to automatically refresh your browser
  */
 gulp.task('serve', ['build'], function () {
-
   browserSync({
     server: {
       baseDir: projectConfig.path.srcDir,
@@ -25,16 +24,21 @@ gulp.task('serve', ['build'], function () {
   // Bower
   gulp.watch('./bower.json', ['bower-inject', 'fonts', reload]);
 
+  // i18n
+  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.i18nDir, '*.json'), [reload]);
+
   // SASS
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass', reload]);
 
   // TypeScript
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts.replace(/\.js$/, '.ts')), ['ts', reload]);
 
+  // Templates
+  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.templates), ['inject', reload]);
+
 });
 
 gulp.task('serve-dist', function () {
-
   browserSync({
     server: {
       baseDir: projectConfig.path.distDir,
@@ -43,5 +47,4 @@ gulp.task('serve-dist', function () {
       open: true
     }
   });
-
 });

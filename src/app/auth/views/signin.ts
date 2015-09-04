@@ -60,6 +60,7 @@ module c3.auth.views {
         .catch(() => {
           this.reset();
         });
+
     }
 
     reset() {

@@ -20,26 +20,26 @@ module c3.event.common.models {
     constructor(response: any) {
       this.id = response['id'];
       this.name = response['name'];
-      this.beginDate = response['beginDate'];
+      this.beginDate = moment(response['beginDate']);
       this.endDate = response['endDate'];
       this.isActive = response['isActive'];
       this.discountLimit = response['discountLimit'];
-      this.createdAt = response['created_at'];
+      this.createdAt = moment(response['created_at']);
       this.updatedAt = response['updated_at'];
       this.deletedAt = response['deleted_at'];
     }
 
 
     // PUBLIC API /////////////////////////////////////////////
-    mapDataForApi(response: any) {
+    mapDataForApi() {
       var data = {};
       data['id'] = this.id;
       data['name'] = this.name;
-      data['beginDate'] = this.beginDate;
+      data['beginDate'] = this.beginDate.format('YYYY-mm-dd HH:MM:SS');
       data['endDate'] = this.endDate;
       data['isActive'] = this.isActive;
       data['discountLimit'] = this.discountLimit;
-      data['created_at'] = this.createdAt;
+      data['created_at'] = this.createdAt.format('YYYY-mm-dd HH:MM:SS');
       data['updated_at'] = this.updatedAt;
       data['deleted_at'] = this.deletedAt;
       return data;

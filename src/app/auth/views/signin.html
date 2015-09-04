@@ -1,6 +1,6 @@
 <div class="container">
 
-  <form class="c3-form-signin" name="vm.form" novalidate>
+  <form class="c3-form-signin" name="vm.form" novalidate ng-hide="vm.promise.isFulfilled()">
 
     <h2 class="c3-form-signin-heading">{{'SIGNIN.TITLE'|translate}}</h2>
 
@@ -23,7 +23,7 @@
 
   </form>
 
-  <div class="c3-signin-spinner" ng-show="vm.promise.isPending()">
+  <div class="c3-signin-spinner" ng-show="vm.promise.isPending() || vm.promise.isFulfilled()">
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12 spinner spinner-md"></div>
