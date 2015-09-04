@@ -1,6 +1,6 @@
-/// <reference path="../../../../typings/tsd.d.ts"/>
+/// <reference path="../../../../../typings/tsd.d.ts"/>
 
-module c3.event.services {
+module c3.event.common.services {
   'use strict';
 
 
@@ -14,17 +14,17 @@ module c3.event.services {
 
   // SERVICE ////////////////////////////////////////////////////////////////////
   export class EventsService implements IEventsService {
-    private backend: common.services.utils.Backend;
+    private backend: c3.common.services.utils.Backend;
     private pristine: boolean = false;
     private activeEvent: any;
 
 
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
-      common.services.utils.ID.BackendService
+      c3.common.services.utils.ID.BackendService
     ];
 
-    constructor(backendService: common.services.utils.BackendService) {
+    constructor(backendService: c3.common.services.utils.BackendService) {
       this.backend = backendService.create('/events');
     }
 
@@ -57,7 +57,7 @@ module c3.event.services {
 
   angular
     .module(ID.EventsService, [
-      common.services.utils.ID.BackendService
+      c3.common.services.utils.ID.BackendService
     ])
     .service(ID.EventsService, EventsService);
 }

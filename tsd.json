@@ -43,6 +43,9 @@
     },
     "jquery.noty/jquery.noty.d.ts": {
       "commit": "a278148f0ec80f2aa9a2ec22f5089308f74dda47"
+    },
+    "moment/moment-node.d.ts": {
+      "commit": "d9fea91e842c2cf5bd0f7d861ac378e571d2ad7c"
     }
   }
 }

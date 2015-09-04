@@ -1,9 +1,9 @@
-/// <reference path="../../../../typings/tsd.d.ts" />
+/// <reference path="../../../../../typings/tsd.d.ts" />
 
-module c3.event.services {
+module c3.event.common.services {
   'use strict';
 
-  export var Namespace = 'c3.event.services';
+  export var Namespace = 'c3.event.common.services';
 
   export var ID = {
     EventsService: `${Namespace}.EventsService`

@@ -3,7 +3,7 @@
 module c3.core.middleware {
   'use strict';
 
-  function EventMiddleware(appRouter: router.AppRouter, eventService: event.services.EventsService) {
+  function EventMiddleware(appRouter: router.AppRouter) {
     appRouter.use('admin.event', (start, destination, next, done, abort) => {
       console.log('EventMiddleware');
       next();
@@ -11,14 +11,14 @@ module c3.core.middleware {
   }
 
   EventMiddleware.$inject = [
-    router.ID.Router,
-    event.services.ID.EventsService
+    router.ID.Router
+    //event.services.ID.EventsService
   ];
 
   angular
     .module(ID.Event, [
-      router.ID.Router,
-      event.services.ID.EventsService
+      router.ID.Router
+      //event.services.ID.EventsService
     ])
     .run(EventMiddleware);
 }

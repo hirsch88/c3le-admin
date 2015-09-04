@@ -7,7 +7,7 @@ module c3.event {
 
   angular
     .module(Namespace, [
-      `${Namespace}.services`,
+      `${Namespace}.common`,
       `${Namespace}.views`,
 
       `${Namespace}.dashboard`

@@ -55,7 +55,7 @@ module c3.auth.views {
 
       this.promise
         .then(() => {
-          this.$state.go('admin.home');
+          this.$state.go('admin.event.dashboard');
         })
         .catch(() => {
           this.reset();
