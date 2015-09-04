@@ -16,6 +16,9 @@ module c3.home.views {
             controller: c3.home.views.ID.HomeController,
             controllerAs: 'vm'
           }
+        },
+        data: {
+          session: true
         }
       });
   };

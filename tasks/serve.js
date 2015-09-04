@@ -22,10 +22,10 @@ gulp.task('serve', ['build'], function () {
   });
 
   // Bower
-  gulp.watch('./bower.json', ['bower-inject', 'fonts', reload]);
+  //gulp.watch('./bower.json', ['bower-inject', 'fonts', reload]);
 
   // i18n
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.i18nDir, '*.json'), [reload]);
+  //gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.i18nDir, '*.json'), [reload]);
 
   // SASS
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass', reload]);
@@ -34,7 +34,7 @@ gulp.task('serve', ['build'], function () {
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts.replace(/\.js$/, '.ts')), ['ts', reload]);
 
   // Templates
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.templates), ['inject', reload]);
+  //gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.templates), ['inject', reload]);
 
 });
 

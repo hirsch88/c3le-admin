@@ -11,6 +11,6 @@ module c3.common.services.stores {
 
   angular
     .module(Namespace, [
-      ID.MyUserStoreService
+      //ID.MyUserStoreService
     ]);
 }

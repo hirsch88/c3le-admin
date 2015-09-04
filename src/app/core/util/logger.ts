@@ -7,7 +7,7 @@ module c3.core.util {
   'use strict';
 
 
-  class Logger {
+  export class Logger {
 
     constructor(private name: string,
                 private $log: ng.ILogService,
@@ -59,7 +59,7 @@ module c3.core.util {
 
   }
 
-  class LoggerService {
+  export class LoggerService {
 
     static $inject = [
       '$log',
