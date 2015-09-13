@@ -49,7 +49,7 @@ module c3.event.members.views {
     }
 
     private init() {
-      this.users = this.usersService.readAll();
+      //this.users = this.usersService.readAll();
     }
 
 

@@ -46,10 +46,10 @@ module c3.common.services.dtos {
     readAll() {
       var promise = this.eventBackend.all().read();
       return promise.then((r) => {
-        console.log(r);
-        var users = r.map((u) => new models.UserModel(u));
-        this.log.info('readAll', users);
-        return users;
+        //    console.log(r);
+        //    //var users = r.map((u) => new models.UserModel(u));
+        //    //this.log.info('readAll', users);
+        //    //return users;
       });
     }
 
