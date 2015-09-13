@@ -13,7 +13,7 @@ module c3.event.members.views {
           'content': {
             templateUrl: core.util.Utils.templateUrl(ID.List),
             controller: ID.ListController,
-            controllerAs: 'members'
+            controllerAs: 'vm'
           }
         },
         data: {
@@ -49,7 +49,7 @@ module c3.event.members.views {
     }
 
     private init() {
-      //this.users = this.usersService.readAll();
+      this.users = this.usersService.readAll();
     }
 
 

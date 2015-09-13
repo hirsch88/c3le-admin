@@ -1,46 +1,47 @@
 <c3-page-header page-title="'MEMBERS.TITLE'"></c3-page-header>
 
 <!--page-promise=""-->
-<c3-page-body >
+<c3-page-body page-promise="vm.users">
 
-  <div class="row">
+  <div class="row" ng-if="vm.users.isFulfilled()">
     <table class="table col-xs-12">
       <thead>
       <th class="header">Col1</th>
       <th class="header">Col2</th>
       <th class="header"></th>
+      <th class="header"></th>
+      <th class="header"></th>
+      <th class="header"></th>
+      <th class="header"></th>
+      <th class="header"></th>
       </thead>
       <tbody>
-      <tr>
-        <td>1</td>
-        <td>ASDF</td>
+
+      <tr ng-repeat="user in vm.users.value()">
+
+        <td><span>{{user.id}}</span></td>
+        <td><span>{{user.fname}}</span></td>
+        <td><span>{{user.lname}}</span></td>
+
+        <td width="60px">
+          <i class="fa" ng-class="{'fa-mars': user.gender==='M', 'fa-venus': user.gender==='F'}"></i>
+        </td>
+
+        <td><span>{{user.email}}</span></td>
+
+
+        <td width="150px"><span>{{user.updatedAt | c3DateFilter:'DD.MM.YYYY HH:MM:SS'}}</span></td>
+        <td width="150px"><span>{{user.createdAt | c3DateFilter:'DD.MM.YYYY HH:MM:SS'}}</span></td>
+
         <td>
           <div class="pull-right">
-            <button type="button" class="btn btn-table btn-table-info">Bearbeiten</button>
-            <button type="button" class="btn btn-table btn-table-danger">Löschen</button>
+            <button type="button" class="btn btn-table btn-table-primary">{{'COMMON.ACTIONS.DETAIL'|translate}}</button>
+            <button type="button" class="btn btn-table btn-table-primary">{{'COMMON.ACTIONS.UPDATE'|translate}}</button>
+            <button type="button" class="btn btn-table btn-table-danger">{{'COMMON.ACTIONS.DESTROY'|translate}}</button>
           </div>
         </td>
       </tr>
-      <tr>
-        <td>2</td>
-        <td>QWET</td>
-        <td>
-          <div class="pull-right">
-            <button type="button" class="btn btn-table btn-table-info">Bearbeiten</button>
-            <button type="button" class="btn btn-table btn-table-danger">Löschen</button>
-          </div>
-        </td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>YXCV</td>
-        <td>
-          <div class="pull-right">
-            <button type="button" class="btn btn-table btn-table-info">Bearbeiten</button>
-            <button type="button" class="btn btn-table btn-table-danger">Löschen</button>
-          </div>
-        </td>
-      </tr>
+
       </tbody>
     </table>
   </div>
