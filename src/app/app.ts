@@ -19,6 +19,7 @@ module c3 {
       'c3.core',
 
       // Common components, services, filters...
+      'c3.common.filters',
 
       // App modules with business logic
       'c3.layout',
