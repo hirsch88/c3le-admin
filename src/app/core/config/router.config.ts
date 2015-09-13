@@ -12,8 +12,8 @@ module c3.core.config {
    */
   var RouterConfig = ($urlRouterProvider) => {
     // when there is an empty route, redirect to /index
-    $urlRouterProvider.when('', '/home');
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.when('', '/auth/signin');
+    $urlRouterProvider.otherwise('/auth/signin');
   };
   RouterConfig.$inject = ['$urlRouterProvider'];
 
