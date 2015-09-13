@@ -6,18 +6,20 @@
   <div class="row" ng-if="vm.users.isFulfilled()">
     <table class="table col-xs-12">
       <thead>
-      <th class="header">Col1</th>
-      <th class="header">Col2</th>
-      <th class="header"></th>
-      <th class="header"></th>
-      <th class="header"></th>
-      <th class="header"></th>
-      <th class="header"></th>
+      <th class="header" ng-click="vm.table.setOrderBy('id')"><a>{{ 'COMMON.LABELS.ID' | translate }}</a></th>
+      <th class="header" ng-click="vm.table.setOrderBy('fname')"><a>{{ 'COMMON.LABELS.FIRSTNAME' | translate }}</a></th>
+      <th class="header" ng-click="vm.table.setOrderBy('lname')"><a>{{ 'COMMON.LABELS.LASTNAME' | translate }}</a></th>
+      <th class="header" ng-click="vm.table.setOrderBy('gender')"><a>{{ 'COMMON.LABELS.GENDER' | translate }}</a></th>
+      <th class="header" ng-click="vm.table.setOrderBy('email')"><a>{{ 'COMMON.LABELS.EMAIL' | translate }}</a></th>
+      <th class="header" ng-click="vm.table.setOrderBy('updatedAt')"><a>{{ 'COMMON.LABELS.UPDATED_AT' | translate }}</a></th>
+      <th class="header" ng-click="vm.table.setOrderBy('createdAt')"><a>{{ 'COMMON.LABELS.CREATED_AT' | translate }}</a></th>
+
       <th class="header"></th>
       </thead>
       <tbody>
 
-      <tr ng-repeat="user in vm.users.value()">
+      <tr ng-repeat="user in vm.users.value() | filter:vm.table.filterValue
+                    | orderBy: vm.table.orderValue:vm.table.isRevert">
 
         <td><span>{{user.id}}</span></td>
         <td><span>{{user.fname}}</span></td>

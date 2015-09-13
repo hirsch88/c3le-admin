@@ -6,13 +6,15 @@ module c3.common.services.utils {
   export var Namespace = 'c3.common.services.utils';
 
   export var ID = {
-    NotyService: `${Namespace}.NotyService`,
-    BackendService: `${Namespace}.BackendService`
+    BackendService: `${Namespace}.BackendService`, 
+    NotyService: `${Namespace}.NotyService`, 
+    TableService: `${Namespace}.TableService`
   };
 
   angular
     .module(Namespace, [
-      ID.NotyService,
-      ID.BackendService
+      ID.BackendService, 
+      ID.NotyService, 
+      ID.TableService
     ]);
 }
