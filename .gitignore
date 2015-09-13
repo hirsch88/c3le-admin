@@ -10,11 +10,10 @@ old/
 bower_components/
 .DS_Store
 npm-debug.log
-src/assets/css/SCSDeveloperPortal.css
+src/assets/css/
 typings/
 src/app/**/*.js
 test/**/*.js
 src/app/**/*.js.map
 test/**/*.js.map
-src/index.html
 src/assets/config/config.json
