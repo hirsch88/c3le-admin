@@ -1,16 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+
 /**
  * BOOTSTRAP
  */
-@import "custom";
-@import "bootstrap/bootstrap";
+@import "w3ui/variables";
+@import "../../lib/bootstrap-sass/assets/stylesheets/bootstrap";
 @import "font-awesome/font-awesome";
+
+/**
+ * VARIABLES
+ */
+$header-height: 120px;
+$sidebar-width: 250px;
+$padding: 15px;
+
 
 /**
  * COMPONENTS
  */
-@import "variables";
 @import "base";
 @import "sidebar";
+@import "header";
 @import "page";
 @import "loadingBar";
 @import "spinner";

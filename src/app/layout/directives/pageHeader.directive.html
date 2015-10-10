@@ -1,21 +1,31 @@
 <div class="c3-page-header">
-  <nav class="navbar navbar-fixed-top navbar-dark bg-primary">
-    <span class="navbar-brand">{{pageHeader.pageTitle | translate}}</span>
+  <nav class="navbar navbar-default navbar-fixed-top hidden-xs">
+    <div class="container-fluid">
+      <div class="navbar-header" style="width: 100%">
 
-    <ul class="nav navbar-nav pull-right">
-      <li class="nav-item">
-        <a class="nav-link" href="#" ng-if="pageHeader.user.isFulfilled()">
-          <i class="fa fa-user"></i>
-          {{pageHeader.user.value().getFullName()}}
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" ui-sref="public.signin">
-          <i class="fa fa-sign-out"></i>
-          Logout
-        </a>
-      </li>
-    </ul>
+        <span class="navbar-brand">{{pageHeader.pageTitle | translate}}</span>
+
+
+        <ul class="nav navbar-nav pull-right hidden-xs">
+          <li class="nav-item">
+            <a class="nav-link" href="#" ng-if="pageHeader.user.isFulfilled()">
+              <i class="fa fa-user"></i>
+              {{pageHeader.user.value().getFullName()}}
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" ui-sref="public.signin">
+              <i class="fa fa-sign-out"></i>
+              Logout
+            </a>
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
+
   </nav>
 </div>
 

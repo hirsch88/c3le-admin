@@ -27,7 +27,9 @@
     "font-awesome": "~4.4.0",
     "lodash": "*",
     "moment": "*",
-    "noty": "~2.3.6"
+    "noty": "~2.3.6",
+    "bootstrap-sass": "~3.3.5",
+    "bootstrap-sweetalert": "~0.4.5"
   },
   "devDependencies": {
     "angular-mocks": "*",
