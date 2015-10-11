@@ -2,20 +2,19 @@
   <div class="c3-sidebar-header">
 
 
-
-
-    <!--<div class="btn-group">-->
-      <!--<button type="button" class="btn btn-secondary btn-block dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-        <!--{{ 'SIDEBAR.ENVIRONMENTS.' + sidebar.selectedEnvironment | translate }}-->
-      <!--</button>-->
-      <!--<div class="dropdown-menu">-->
-        <!--<a class="dropdown-item" ng-repeat="env in sidebar.getEnvironments()"-->
-           <!--ng-class="{active: env === sidebar.selectedEnvironment}"-->
-           <!--ng-click="sidebar.select(env)">-->
-          <!--{{ 'SIDEBAR.ENVIRONMENTS.' + env | translate }}-->
-        <!--</a>-->
-      <!--</div>-->
-    <!--</div>-->
+    <div class="btn-group">
+      <button type="button" class="btn btn-secondary btn-block dropdown-toggle" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+        {{ 'SIDEBAR.ENVIRONMENTS.' + sidebar.selectedEnvironment | translate }}
+      </button>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" ng-repeat="env in sidebar.getEnvironments()"
+           ng-class="{active: env === sidebar.selectedEnvironment}"
+           ng-click="sidebar.select(env)">
+          {{ 'SIDEBAR.ENVIRONMENTS.' + env | translate }}
+        </a>
+      </div>
+    </div>
 
   </div>
   <div class="c3-sidebar-body">
@@ -27,8 +26,8 @@
           <i class="fa" ng-class="item.iconClass"></i>
 
           <!--<span class="fa-stack fa-lg">-->
-            <!--<i class="fa fa-square-o fa-stack-2x"></i>-->
-            <!--<i class="fa fa-stack-1x fa-inverse" ng-class="item.iconClass"></i>-->
+          <!--<i class="fa fa-square-o fa-stack-2x"></i>-->
+          <!--<i class="fa fa-stack-1x fa-inverse" ng-class="item.iconClass"></i>-->
           <!--</span>-->
           {{ item.translateId | translate }}
         </a>
