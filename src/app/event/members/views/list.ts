@@ -66,7 +66,7 @@ module c3.event.members.views {
 
   // SIDEBAR ///////////////////////////////////////////////////////////////////////
   var sidebar = (sidebarService: layout.services.SidebarService) => sidebarService.push(
-    'members', 'MEMBERS.TITLE', 'fa-user', 'admin.event.members', 'eventAdmin'
+    'members', 'EVENT_MEMBERS.TITLE', 'fa-user', 'admin.event.members', 'eventAdmin'
   );
   sidebar.$inject = [layout.services.ID.SidebarService];
 

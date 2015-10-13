@@ -154,8 +154,9 @@
   "DASHBOARD":    {
     "TITLE": "Dashboard"
   },
-  "MEMBERS":    {
-    "TITLE": "Teilnehmer"
+  "EVENT_MEMBERS":    {
+    "TITLE": "Teilnehmer",
+    "CREATE": "Teilnehmer erstellen"
   },
   "LAYOUT":  {
     "PAGE_LOADING": "Seite wird geladen..."
