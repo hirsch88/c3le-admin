@@ -1,4 +1,4 @@
-<c3-page-header></c3-page-header>
+<c3-page-header page-title="'DASHBOARD.TITLE'"></c3-page-header>
 
 <!--page-promise=""-->
 <c3-page-body>
@@ -19,6 +19,8 @@
 
   <p>Paragraph</p>
 
+  <br/><br/>
+  <h4>Buttons</h4>
   <!-- Standard button -->
   <button type="button" class="btn btn-default">Default</button>
 
@@ -39,5 +41,152 @@
 
   <!-- Deemphasize a button by making it look like a link while maintaining button behavior -->
   <button type="button" class="btn btn-link">Link</button>
+
+
+  <br/><br/>
+  <h4>Alerts</h4>
+  <div class="alert alert-success" role="alert">...</div>
+  <div class="alert alert-info" role="alert">...</div>
+  <div class="alert alert-warning" role="alert">...</div>
+  <div class="alert alert-danger" role="alert">...</div>
+
+
+  <br/><br/>
+  <h4>Forms</h4>
+  <div class="row">
+    <!-- Basic example -->
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Basic example</h3></div>
+        <div class="panel-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <label class="cr-styled">
+                <input type="checkbox">
+                <i class="fa"></i>
+                Remember me
+              </label>
+            </div>
+            <button type="submit" class="btn btn-purple">Submit</button>
+          </form>
+        </div><!-- panel-body -->
+      </div> <!-- panel -->
+    </div> <!-- col-->
+
+    <!-- Horizontal form -->
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h3 class="panel-title">Horizontal form</h3></div>
+        <div class="panel-body">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-3 control-label">Email</label>
+              <div class="col-sm-9">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword3" class="col-sm-3 control-label">Password</label>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputPassword4" class="col-sm-3 control-label">Re Password</label>
+              <div class="col-sm-9">
+                <input type="password" class="form-control" id="inputPassword4" placeholder="Retype Password">
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-9">
+                <label class="cr-styled">
+                  <input type="checkbox">
+                  <i class="fa"></i>
+                  Check me out !
+                </label>
+              </div>
+            </div>
+            <div class="form-group m-b-0">
+              <div class="col-sm-offset-3 col-sm-9">
+                <button type="submit" class="btn btn-info">Sign in</button>
+              </div>
+            </div>
+          </form>
+        </div> <!-- panel-body -->
+      </div> <!-- panel -->
+    </div> <!-- col -->
+
+  </div>
+
+  <br/><br/>
+  <h4>Basic Elements</h4>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <p class="text-uppercase text-muted small"><strong>Examples</strong>
+      </p>
+      <div class="row">
+        <div class="col-lg-6 col-md-12">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Normal Input</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Help Text</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control">
+                <span id="helpBlock" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Placeholder</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" placeholder="Placeholder...">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6 col-md-12">
+          <form class="form-horizontal">
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Disabled Input</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" placeholder="Disabled Input Here..." disabled="">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Textarea</label>
+              <div class="col-sm-10">
+                <textarea class="form-control" rows="3"></textarea>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="inputEmail3" class="col-sm-2 control-label">Static Control</label>
+              <div class="col-sm-10">
+                <p class="form-control-static">email@example.com</p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 
 </c3-page-body>

@@ -13,7 +13,7 @@ $gray-darker:            #2c3237; //lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              #484e53; //lighten($gray-base, 20%) !default;   // #333
 $gray:                   #787e83; //lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             #abb1b6; //lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter:           #c5cbd0; //lighten($gray-base, 93.5%) !default; // #eee  #d6d8d8
+$gray-lighter:           #c5cbd0; //lighten($gray-base, 93.5%) !default; // #eee
 
 $brand-primary:         #2d7caa; //darken(#428bca, 6.5%) !default; // #337ab7
 $brand-success:         #5cb463; //#5cb85c !default;
@@ -25,6 +25,7 @@ $brand-green:           #319577 !default;
 $brand-yellow:          #e49825 !default;
 
 $bg-dark: #2e353b;
+$gray-disabled: #ccc;
 
 
 //== Scaffolding
@@ -192,12 +193,12 @@ $btn-border-radius-small:        $border-radius-small !default;
 //** `<input>` background color
 $input-bg:                       #fff !default;
 //** `<input disabled>` background color
-$input-bg-disabled:              $gray-lighter !default;
+$input-bg-disabled:              $gray-disabled !default;
 
 //** Text color for `<input>`s
 $input-color:                    $gray !default;
 //** `<input>` border color
-$input-border:                   #ccc !default;
+$input-border:                   $gray-disabled !default;
 
 // TODO: Rename `$input-border-radius` to `$input-border-radius-base` in v4
 //** Default `.form-control` border radius

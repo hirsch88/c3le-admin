@@ -19,14 +19,17 @@
 }
 
 .c3-page-body {
-  margin:     $padding * 2;
+  margin: $padding * 2;
 
   .padding {
     padding: $padding;
   }
 
-  .container-fluid > div, .container-fluid > table{
+  .container-fluid > div, .container-fluid > table {
     margin-bottom: $padding * 2;
+  }
+
+  .container-fluid > table {
     background: $body-bg;
   }
 
