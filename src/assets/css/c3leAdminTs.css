@@ -8530,7 +8530,7 @@ body {
     padding: 15px 15px; }
 
 .c3-page-body {
-  margin: 30px; }
+  margin: 30px 15px; }
   .c3-page-body .padding {
     padding: 15px; }
   .c3-page-body .container-fluid > div, .c3-page-body .container-fluid > table {
@@ -8804,7 +8804,7 @@ table .header a {
 
 .btn-table {
   text-transform: uppercase;
-  color: #e2e4e5;
+  color: #c6cace;
   background: transparent;
   font-size: 0.9em;
   font-weight: bold;
