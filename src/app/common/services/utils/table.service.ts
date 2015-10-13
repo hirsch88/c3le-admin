@@ -13,12 +13,14 @@ module c3.common.services.utils {
     filterValue: string;
     orderValue: string;
     isRevert: boolean;
-    setOrderBy(colName: string)
+    setOrderBy(colName: string);
+    getOrderClass(colName: string);
   }
 
 
   // SERVICE ////////////////////////////////////////////////////////////////////
   export class TableService implements ITableService {
+
     filterValue: string;
     orderValue: string;
     isRevert: boolean;
@@ -38,6 +40,18 @@ module c3.common.services.utils {
       } else {
         this.orderValue = colName;
         this.isRevert = false;
+      }
+    }
+
+    getOrderClass(colName: string) {
+      if (colName === this.orderValue) {
+        if (this.isRevert) {
+          return 'sorting_desc';
+        } else {
+          return 'sorting_asc';
+        }
+      } else {
+        return 'sorting';
       }
     }
 

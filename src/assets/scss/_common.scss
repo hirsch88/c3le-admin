@@ -1,0 +1,39 @@
+.truncate {
+  white-space:   nowrap;
+  overflow:      hidden;
+  text-overflow: ellipsis;
+  width:         100%;
+}
+
+.margin-top-none {
+  margin-top: 0 !important;
+}
+
+.width-50 {
+  width: 50px;
+}
+
+.width-80 {
+  width: 80px;
+}
+
+.width-100 {
+  width: 100px;
+}
+
+.width-120 {
+  width: 120px;
+}
+
+@media (min-width: 768px) {
+  .lead {
+    font-size: 21px;
+  }
+}
+
+.lead {
+  margin-bottom: 22px;
+  font-size:     16px;
+  font-weight:   300;
+  line-height:   1.4;
+}

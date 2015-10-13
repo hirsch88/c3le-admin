@@ -28,7 +28,7 @@ gulp.task('serve', ['build'], function () {
   //gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.i18nDir, '*.json'), [reload]);
 
   // SASS
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass', reload]);
+  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass']);
 
   // TypeScript
   gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts.replace(/\.js$/, '.ts')), ['ts', reload]);

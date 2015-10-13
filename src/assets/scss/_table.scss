@@ -1,30 +1,54 @@
-table.table{
+table.table {
   margin-bottom: 0;
+  background:    white;
 }
 
-.btn-table{
-  text-transform: uppercase;
-  color: lighten($gray-light, 20%);
-  background: transparent;
-  font-size: 0.9em;
-  font-weight: bold;
-  padding: 0;
-  margin-left: 5px;
 
-  &:hover{
-    &.btn-table-primary{
+.table-bordered {
+  border: 1px solid #ddd;
+}
+
+table .header a {
+  cursor: pointer;
+  color:  $gray-darker;
+}
+
+.table > thead > tr > th,
+.table > tbody > tr > td {
+  padding:        10px;
+  padding-left:   20px;
+  padding-right:  20px;
+  line-height:    1.62857143;
+  vertical-align: top;
+
+  > p {
+    margin: 0;
+  }
+}
+
+.btn-table {
+  text-transform: uppercase;
+  color:          lighten($gray-light, 20%);
+  background:     transparent;
+  font-size:      0.9em;
+  font-weight:    bold;
+  padding:        0;
+  margin-left:    5px;
+
+  &:hover {
+    &.btn-table-primary {
       color: $brand-primary;
     }
-    &.btn-table-success{
+    &.btn-table-success {
       color: $brand-success;
     }
-    &.btn-table-info{
+    &.btn-table-info {
       color: $brand-info;
     }
-    &.btn-table-warning{
+    &.btn-table-warning {
       color: $brand-warning;
     }
-    &.btn-table-danger{
+    &.btn-table-danger {
       color: $brand-danger;
     }
   }

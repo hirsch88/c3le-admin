@@ -27,7 +27,7 @@
 
   .container-fluid > div, .container-fluid > table{
     margin-bottom: $padding * 2;
-    background: white;
+    background: $body-bg;
   }
 
 }
@@ -40,7 +40,7 @@
   left:       $sidebar-width;
 
   text-align: center;
-  background: rgba(255, 255, 255, 0.75);
+  //background: rgba(255, 255, 255, 0.75);
   z-index:    2000;
 
   .spinner {

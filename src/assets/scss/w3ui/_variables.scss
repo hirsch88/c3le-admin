@@ -13,7 +13,7 @@ $gray-darker:            #2c3237; //lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              #484e53; //lighten($gray-base, 20%) !default;   // #333
 $gray:                   #787e83; //lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             #abb1b6; //lighten($gray-base, 46.7%) !default; // #777
-$gray-lighter:           #c5cbd0; //lighten($gray-base, 93.5%) !default; // #eee
+$gray-lighter:           #c5cbd0; //lighten($gray-base, 93.5%) !default; // #eee  #d6d8d8
 
 $brand-primary:         #2d7caa; //darken(#428bca, 6.5%) !default; // #337ab7
 $brand-success:         #5cb463; //#5cb85c !default;
@@ -375,7 +375,7 @@ $navbar-collapse-max-height:       340px !default;
 
 $navbar-default-color:             #777 !default;
 $navbar-default-bg:                #fff !default;
-$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-border:            #d6d8d8; //darken($navbar-default-bg, 6.5%) !default;
 
 // Navbar links
 $navbar-default-link-color:                #777 !default;
