@@ -20,6 +20,7 @@
 
   <!-- bower:css -->
   <link rel="stylesheet" href="lib/angular-loading-bar/build/loading-bar.css">
+  <link rel="stylesheet" href="lib/bootstrap-sweetalert/lib/sweet-alert.css">
   <!-- endinject -->
 
   <!-- inject:css -->
@@ -45,6 +46,8 @@
 <script src="lib/lodash/lodash.js"></script>
 <script src="lib/moment/moment.js"></script>
 <script src="lib/noty/js/noty/packaged/jquery.noty.packaged.js"></script>
+<script src="lib/bootstrap-sass/assets/javascripts/bootstrap.js"></script>
+<script src="lib/bootstrap-sweetalert/lib/sweet-alert.js"></script>
 <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
 <!-- endinject -->
 
@@ -52,6 +55,7 @@
 <script src="app/app.js"></script>
 <script src="app/_home_example/home.module.js"></script>
 <script src="app/auth/auth.module.js"></script>
+<script src="app/common/common.module.js"></script>
 <script src="app/core/core.module.js"></script>
 <script src="app/event/event.module.js"></script>
 <script src="app/layout/layout.module.js"></script>
@@ -60,8 +64,10 @@
 <script src="app/core/middleware/middleware.module.js"></script>
 <script src="app/core/router/router.module.js"></script>
 <script src="app/core/util/util.module.js"></script>
+<script src="app/common/directives/directives.module.js"></script>
 <script src="app/common/filters/filters.module.js"></script>
 <script src="app/common/services/services.module.js"></script>
+<script src="app/common/utils/utils.module.js"></script>
 <script src="app/_home_example/views/views.module.js"></script>
 <script src="app/auth/services/services.module.js"></script>
 <script src="app/auth/views/views.module.js"></script>
@@ -99,11 +105,10 @@
 <script src="app/core/util/logger.js"></script>
 <script src="app/core/util/utils.js"></script>
 <script src="app/core/util/viewController.js"></script>
+<script src="app/common/directives/spinnerSm.js"></script>
 <script src="app/common/filters/date.filter.js"></script>
 <script src="app/common/models/user.model.js"></script>
-<script src="app/common/util/lazy.js"></script>
 <script src="app/common/services/dtos/users.service.js"></script>
-<script src="app/common/services/stores/myUserStore.service.js"></script>
 <script src="app/common/services/utils/backend.service.js"></script>
 <script src="app/common/services/utils/noty.service.js"></script>
 <script src="app/common/services/utils/table.service.js"></script>

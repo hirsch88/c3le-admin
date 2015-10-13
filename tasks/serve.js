@@ -38,6 +38,22 @@ gulp.task('serve', ['build'], function () {
 
 });
 
+gulp.task('serve-light', function () {
+  browserSync({
+    server: {
+      baseDir: projectConfig.path.srcDir,
+      index: projectConfig.path.main
+    },
+    open: false,
+    reloadDebounce: 300
+  });
+
+  // SASS
+  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass']);
+  gulp.watch('./bower.json', ['bower-inject', 'fonts']);
+
+});
+
 gulp.task('serve-dist', function () {
   browserSync({
     server: {

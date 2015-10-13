@@ -36,8 +36,8 @@ module c3.common.models {
       this.isLocked = response['isLocked'];
       this.birthday = moment(response['birthday']);
       this.roleId = response['roleId'];
-      this.createdAt = moment(response['created_at']);
-      this.updatedAt = moment(response['updated_at']);
+      this.createdAt = moment(response['createdAt']);
+      this.updatedAt = moment(response['updatedAt']);
       this.deletedAt = response['deleted_at'];
     }
 

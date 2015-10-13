@@ -9,6 +9,7 @@ var del = require('del');
  */
 gulp.task('ts-clean', function (cb) {
   del([
-    projectConfig.path.srcDir + '/' + projectConfig.path.appDir + '/**/*.js'
+    projectConfig.path.srcDir + '/' + projectConfig.path.appDir + '/**/*.js',
+    projectConfig.path.srcDir + '/' + projectConfig.path.appDir + '/**/*.js.map'
   ], cb);
 });

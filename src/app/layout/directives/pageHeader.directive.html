@@ -8,9 +8,12 @@
 
         <ul class="nav navbar-nav pull-right hidden-xs">
           <li class="nav-item">
-            <a class="nav-link" href="#" ng-if="pageHeader.user.isFulfilled()">
-              <i class="fa fa-user"></i>
-              {{pageHeader.user.value().getFullName()}}
+            <a class="nav-link">
+              <c3-spinner-sm ng-if="pageHeader.user.isPending()"></c3-spinner-sm>
+              <span ng-if="pageHeader.user.isFulfilled()">
+                <i class="fa fa-user"></i>
+                {{pageHeader.user.value().getFullName()}}
+              </span>
             </a>
           </li>
 

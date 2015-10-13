@@ -19,6 +19,7 @@ module c3 {
       'c3.core',
 
       // Common components, services, filters...
+      'c3.common.directives',
       'c3.common.filters',
 
       // App modules with business logic
@@ -26,4 +27,5 @@ module c3 {
       'c3.auth',
       'c3.event'
     ]);
+
 }
