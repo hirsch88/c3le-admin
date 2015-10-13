@@ -156,7 +156,7 @@
   },
   "EVENT_MEMBERS":    {
     "TITLE": "Teilnehmer",
-    "CREATE": "Teilnehmer erstellen"
+    "CREATE": "Neuer Teilnehmer erstellen"
   },
   "LAYOUT":  {
     "PAGE_LOADING": "Seite wird geladen..."
