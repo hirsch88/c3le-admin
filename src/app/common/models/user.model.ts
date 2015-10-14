@@ -38,7 +38,7 @@ module c3.common.models {
       this.roleId = response['roleId'];
       this.createdAt = moment(response['createdAt']);
       this.updatedAt = moment(response['updatedAt']);
-      this.deletedAt = response['deleted_at'];
+      this.deletedAt = response['deletedAt'];
     }
 
 
@@ -57,9 +57,9 @@ module c3.common.models {
       data['isLocked'] = this.isLocked;
       data['birthday'] = this.birthday.format('YYYY-mm-dd HH:MM:SS');
       data['roleId'] = this.roleId;
-      data['created_at'] = this.createdAt.format('YYYY-mm-dd HH:MM:SS');
-      data['updated_at'] = this.updatedAt.format('YYYY-mm-dd HH:MM:SS');
-      data['deleted_at'] = this.deletedAt;
+      data['createdAt'] = this.createdAt.format('YYYY-mm-dd HH:MM:SS');
+      data['updatedAt'] = this.updatedAt.format('YYYY-mm-dd HH:MM:SS');
+      data['deletedAt'] = this.deletedAt;
       return data;
     }
 

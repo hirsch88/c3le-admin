@@ -59,11 +59,11 @@
 <script src="app/core/core.module.js"></script>
 <script src="app/event/event.module.js"></script>
 <script src="app/layout/layout.module.js"></script>
-<script src="app/core/config/config.module.js"></script>
 <script src="app/core/constants/constants.module.js"></script>
+<script src="app/core/config/config.module.js"></script>
 <script src="app/core/middleware/middleware.module.js"></script>
-<script src="app/core/util/util.module.js"></script>
 <script src="app/core/router/router.module.js"></script>
+<script src="app/core/util/util.module.js"></script>
 <script src="app/common/directives/directives.module.js"></script>
 <script src="app/common/filters/filters.module.js"></script>
 <script src="app/common/services/services.module.js"></script>
@@ -74,6 +74,7 @@
 <script src="app/event/common/common.module.js"></script>
 <script src="app/event/dashboard/dashboard.module.js"></script>
 <script src="app/event/members/members.module.js"></script>
+<script src="app/event/teams/teams.module.js"></script>
 <script src="app/event/views/views.module.js"></script>
 <script src="app/layout/directives/directives.module.js"></script>
 <script src="app/layout/services/services.module.js"></script>
@@ -84,9 +85,11 @@
 <script src="app/event/common/services/services.module.js"></script>
 <script src="app/event/dashboard/views/views.module.js"></script>
 <script src="app/event/members/views/views.module.js"></script>
+<script src="app/event/teams/views/views.module.js"></script>
 <script src="app/auth/auth.routes.js"></script>
 <script src="app/event/dashboard/dashboard.routes.js"></script>
 <script src="app/event/members/members.routes.js"></script>
+<script src="app/event/teams/teams.routes.js"></script>
 <script src="app/core/constants/config.constant.js"></script>
 <script src="app/core/config/compile.config.js"></script>
 <script src="app/core/config/http.config.js"></script>
@@ -99,18 +102,20 @@
 <script src="app/core/interfaces/crudable.js"></script>
 <script src="app/core/middleware/event.middleware.js"></script>
 <script src="app/core/middleware/session.middleware.js"></script>
+<script src="app/core/router/destination.js"></script>
+<script src="app/core/router/layer.js"></script>
+<script src="app/core/router/router.js"></script>
+<script src="app/core/router/start.js"></script>
 <script src="app/core/util/array.js"></script>
 <script src="app/core/util/eventHandler.js"></script>
 <script src="app/core/util/logger.js"></script>
 <script src="app/core/util/utils.js"></script>
 <script src="app/core/util/viewController.js"></script>
-<script src="app/core/router/destination.js"></script>
-<script src="app/core/router/layer.js"></script>
-<script src="app/core/router/router.js"></script>
-<script src="app/core/router/start.js"></script>
 <script src="app/common/directives/spinnerSm.js"></script>
 <script src="app/common/filters/date.filter.js"></script>
+<script src="app/common/models/team.model.js"></script>
 <script src="app/common/models/user.model.js"></script>
+<script src="app/common/services/dtos/teams.service.js"></script>
 <script src="app/common/services/dtos/users.service.js"></script>
 <script src="app/common/services/utils/backend.service.js"></script>
 <script src="app/common/services/utils/noty.service.js"></script>
@@ -120,6 +125,7 @@
 <script src="app/auth/views/signin.js"></script>
 <script src="app/event/dashboard/dashboard.sidebar.js"></script>
 <script src="app/event/members/members.sidebar.js"></script>
+<script src="app/event/teams/teams.sidebar.js"></script>
 <script src="app/event/views/event.js"></script>
 <script src="app/layout/directives/pageBody.directive.js"></script>
 <script src="app/layout/directives/pageHeader.directive.js"></script>
@@ -131,6 +137,7 @@
 <script src="app/event/common/models/event.model.js"></script>
 <script src="app/event/dashboard/views/dashboard.js"></script>
 <script src="app/event/members/views/list.js"></script>
+<script src="app/event/teams/views/list.js"></script>
 <!-- endinject -->
 
 </body>

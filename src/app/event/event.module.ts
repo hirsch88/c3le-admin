@@ -11,6 +11,7 @@ module c3.event {
       `${Namespace}.views`,
 
       `${Namespace}.dashboard`,
-      `${Namespace}.members`
+      `${Namespace}.members`,
+      `${Namespace}.teams`
     ]);
 }

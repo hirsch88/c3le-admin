@@ -158,6 +158,10 @@
     "TITLE": "Teilnehmer",
     "CREATE": "Neuer Teilnehmer erstellen"
   },
+  "TEAMS":    {
+    "TITLE": "Teams",
+    "CREATE": "Neues Team erstellen"
+  },
   "LAYOUT":  {
     "PAGE_LOADING": "Seite wird geladen..."
   },
