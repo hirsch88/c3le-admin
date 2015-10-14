@@ -1,0 +1,12 @@
+{
+  "id":           17,
+  "bikeNr":       17,
+  "status":       "fixed",
+  "row":          2,
+  "column":       1,
+  "aboBookingId": 1,
+  "stage":        false,
+  "eventId":      1,
+  "updatedAt":    "2015-10-10 21:29:09",
+  "createdAt":    "2015-10-10 21:29:09"
+}

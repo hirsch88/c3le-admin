@@ -1,6 +1,6 @@
-/// <reference path="../../../../../typings/tsd.d.ts"/>
+/// <reference path="../../../../typings/tsd.d.ts"/>
 
-module c3.event.common.services {
+module c3.common.services {
   'use strict';
 
 
@@ -16,7 +16,7 @@ module c3.event.common.services {
   export class EventsService implements IEventsService {
     private backend: c3.common.services.utils.Backend;
     private pristine: boolean = false;
-    private activeEvent: event.common.models.EventModel;
+    private activeEvent: models.event.EventModel;
     private log: core.util.Logger;
 
 
@@ -38,7 +38,7 @@ module c3.event.common.services {
       var promise = this.backend.custom('/acitve').read();
       return promise.then((r) => {
         this.pristine = false;
-        this.activeEvent = new event.common.models.EventModel(r);
+        this.activeEvent = new common.models.event.EventModel(r);
         this.log.info('activeEvent', this.activeEvent);
         return r;
       });

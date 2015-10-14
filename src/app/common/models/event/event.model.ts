@@ -1,6 +1,6 @@
 /// <reference path="../../../../../typings/tsd.d.ts"/>
 
-module c3.event.common.models {
+module c3.common.models.event {
   'use strict';
 
   // MODEL ////////////////////////////////////////////////////////////////////

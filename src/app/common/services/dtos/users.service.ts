@@ -21,12 +21,12 @@ module c3.common.services.dtos {
     static $inject = [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
-      event.common.services.ID.EventsService
+      common.services.ID.EventsService
     ];
 
     constructor(backendService: common.services.utils.BackendService,
                 loggerService: core.util.LoggerService,
-                eventsService: event.common.services.EventsService) {
+                eventsService: common.services.EventsService) {
 
       this.eventBackend = backendService.create(`/events/${eventsService.getActiveEventId()}/users`);
       this.backend = backendService.create('/users');
@@ -78,7 +78,7 @@ module c3.common.services.dtos {
     .module(ID.UsersService, [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
-      event.common.services.ID.EventsService
+      common.services.ID.EventsService
     ])
     .service(ID.UsersService, UsersService);
 }

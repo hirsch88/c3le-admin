@@ -1,0 +1,28 @@
+{
+  "id":           1,
+  "userId":       3,
+  "description":  "Buchung f\u00fcr c3le Bikes.",
+  "notification": "",
+  "payDate":      "2015-10-10 21:29:09",
+  "payStatus":    "payed",
+  "updatedAt":    "2015-10-10 21:29:09",
+  "createdAt":    "2015-10-10 21:29:09",
+  "deletedAt":    null,
+  "user":         {
+    "id":        3,
+    "email":     "info@c3le.ch",
+    "fname":     "Fancesco",
+    "lname":     "Jenny",
+    "gender":    "M",
+    "street":    null,
+    "location":  null,
+    "countryId": null,
+    "phone":     null,
+    "isLocked":  false,
+    "birthday":  null,
+    "roleId":    1,
+    "updatedAt": "2015-10-10 21:29:09",
+    "createdAt": "2015-10-10 21:29:09",
+    "deletedAt": null
+  }
+}

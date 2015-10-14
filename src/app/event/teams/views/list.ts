@@ -12,19 +12,19 @@ module c3.event.teams.views {
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class ListController extends core.util.ViewController implements IListScope {
-    teams: Promise<Array<c3.common.models.TeamModel>>;
+    teams: Promise<Array<c3.common.models.event.TeamModel>>;
     table: c3.common.services.utils.TableService;
 
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
       core.util.ID.EventHandler,
-      c3.common.services.dtos.ID.TeamsService,
+      c3.common.services.dtos.event.ID.TeamsService,
       c3.common.services.utils.ID.TableService
     ];
 
     constructor($scope, eventHandler,
-                private teamService: c3.common.services.dtos.TeamsService,
+                private teamService: c3.common.services.dtos.event.TeamsService,
                 private tableService: c3.common.services.utils.TableFactory) {
       super($scope, eventHandler);
       this.activate();
@@ -46,9 +46,9 @@ module c3.event.teams.views {
   angular
     .module(ID.List, [
       'ui.router',
-      c3.core.util.ID.EventHandler,
-      c3.common.services.dtos.ID.TeamsService,
-      c3.common.services.utils.ID.TableService
+      core.util.ID.EventHandler,
+      common.services.dtos.event.ID.TeamsService,
+      common.services.utils.ID.TableService
     ])
     .controller(ID.ListController, ListController);
 }

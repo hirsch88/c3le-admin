@@ -1,6 +1,6 @@
-/// <reference path="../../../../../typings/tsd.d.ts"/>
+/// <reference path="../../../../../../typings/tsd.d.ts"/>
 
-module c3.common.services.dtos {
+module c3.common.services.dtos.event {
   'use strict';
 
 
@@ -21,12 +21,12 @@ module c3.common.services.dtos {
     static $inject = [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
-      event.common.services.ID.EventsService
+      common.services.ID.EventsService
     ];
 
     constructor(backendService: common.services.utils.BackendService,
                 loggerService: core.util.LoggerService,
-                eventsService: event.common.services.EventsService) {
+                eventsService: common.services.EventsService) {
 
       this.eventBackend = backendService.create(`/events/${eventsService.getActiveEventId()}/teams`);
       this.backend = backendService.create('/teams');
@@ -37,7 +37,7 @@ module c3.common.services.dtos {
     readAll() {
       var promise = this.eventBackend.all().read();
       return promise.then((r: Array<any>) => {
-        var teams = r.map((d) => new models.TeamModel(d));
+        var teams = r.map((d) => new models.event.TeamModel(d));
         this.log.info('readAll', teams);
         return teams;
       });
@@ -69,7 +69,7 @@ module c3.common.services.dtos {
     .module(ID.TeamsService, [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
-      event.common.services.ID.EventsService
+      common.services.ID.EventsService
     ])
     .service(ID.TeamsService, TeamsService);
 }

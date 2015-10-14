@@ -1,0 +1,16 @@
+{
+  "id":             1,
+  "billId":         1,
+  "aboCatalogId":   2,
+  "startDate":      null,
+  "endDate":        null,
+  "credit":         null,
+  "balance":        null,
+  "eventId":        1,
+  "teamName":       "c3le Bike",
+  "checkIn":        null,
+  "checkInMessage": null,
+  "updatedAt":      "2015-10-10 21:29:09",
+  "createdAt":      "2015-10-10 21:29:09",
+  "deletedAt":      null
+}

@@ -6,13 +6,11 @@ module c3.common.services.dtos {
   export var Namespace = 'c3.common.services.dtos';
 
   export var ID = {
-    UsersService: `${Namespace}.UsersService`,
-    TeamsService: `${Namespace}.TeamsService`
+    UsersService: `${Namespace}.UsersService`
   };
 
   angular
     .module(Namespace, [
-      ID.UsersService,
-      ID.TeamsService
+      ID.UsersService
     ]);
 }
