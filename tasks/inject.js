@@ -20,7 +20,7 @@ gulp.task('inject', ['css-auto-prefix'], function () {
   });
 
   return gulp
-    .src(path.join(projectConfig.path.srcDir, projectConfig.path.main))
+    .src(path.join(projectConfig.path.srcDir, projectConfig.path.mainTpl))
     .pipe($.inject(gulp.src(projectConfig.bower.files.main(), {read: false}), {name: 'bower', relative: true}))
     .pipe($.inject(gulp.src(source), { relative: true }))
     .pipe($.rename(projectConfig.path.main))

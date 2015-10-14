@@ -12,7 +12,7 @@ module c3.event.teams.views {
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class ListController extends core.util.ViewController implements IListScope {
-    users: Promise<Array<c3.common.models.UserModel>>;
+    teams: Promise<Array<c3.common.models.TeamModel>>;
     table: c3.common.services.utils.TableService;
 
     // CONSTRUCTOR /////////////////////////////////////////////
@@ -24,14 +24,14 @@ module c3.event.teams.views {
     ];
 
     constructor($scope, eventHandler,
-                private usersService: c3.common.services.dtos.TeamsService,
+                private teamService: c3.common.services.dtos.TeamsService,
                 private tableService: c3.common.services.utils.TableFactory) {
       super($scope, eventHandler);
       this.activate();
     }
 
     private activate() {
-      this.users = this.usersService.readAll();
+      this.teams = this.teamService.readAll();
       this.table = this.tableService.create();
     }
 

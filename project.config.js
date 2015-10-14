@@ -91,6 +91,7 @@ module.exports = function (isGenerator) {
       assetsDir: 'assets',
       tempDir:   '.tmp',
       main:      'index.html',
+      mainTpl:    'index.tpl.html',
       assets:     {
         configDir: 'assets/config',
         config:    {

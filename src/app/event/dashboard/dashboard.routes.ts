@@ -7,7 +7,7 @@ module c3.event.dashboard {
   var routes = ($stateProvider: ng.ui.IStateProvider) => {
     $stateProvider
       .state('admin.event.dashboard', {
-        url: '/members',
+        url: '/dashboard',
         views: {
           'content': {
             templateUrl: core.util.Utils.templateUrl(views.ID.Dashboard),

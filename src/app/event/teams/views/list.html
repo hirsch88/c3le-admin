@@ -1,9 +1,9 @@
 <c3-page-header page-title="'TEAMS.TITLE'"></c3-page-header>
 
 <!--page-promise=""-->
-<c3-page-body page-promise="vm.users">
+<c3-page-body page-promise="vm.teams">
 
-  <div ng-if="vm.users.isFulfilled()">
+  <div ng-if="vm.teams.isFulfilled()">
     <h1 class="page-header margin-top-none">{{'TEAMS.TITLE'|translate}}
       <small></small>
     </h1>
@@ -51,13 +51,13 @@
                   </thead>
                   <tbody>
 
-                  <tr ng-repeat="user in vm.users.value() | filter:vm.table.filterValue
+                  <tr ng-repeat="team in vm.teams.value() | filter:vm.table.filterValue
                     | orderBy: vm.table.orderValue:vm.table.isRevert">
 
-                    <td><span>{{user.id}}</span></td>
-                    <td><span>{{user.teamName}}</span></td>
-                    <td><p>{{user.updatedAt | c3DateFilter:'DD.MM.YYYY HH:MM:SS'}}</p></td>
-                    <td><p>{{user.createdAt | c3DateFilter:'DD.MM.YYYY HH:MM:SS'}}</p></td>
+                    <td><span>{{team.id}}</span></td>
+                    <td><span>{{team.teamName}}</span></td>
+                    <td><p>{{team.updatedAt | c3DateFilter:'DD.MM.YYYY HH:MM:SS'}}</p></td>
+                    <td><p>{{team.createdAt | c3DateFilter:'DD.MM.YYYY HH:MM:SS'}}</p></td>
                     <td>
                       <div class="pull-right">
                         <button type="button" class="btn btn-table btn-table-primary">
