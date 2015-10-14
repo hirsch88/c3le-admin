@@ -10,8 +10,9 @@ module c3.event {
       `${Namespace}.views`,
 
       `${Namespace}.dashboard`,
-      `${Namespace}.members`,
-      `${Namespace}.teams`,
+      `${Namespace}.bikes`,
       `${Namespace}.bills`
+      `${Namespace}.teams`,
+      `${Namespace}.members`,
     ]);
 }

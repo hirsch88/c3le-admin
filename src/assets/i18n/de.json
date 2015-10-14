@@ -166,6 +166,9 @@
     "TITLE": "Buchhaltung",
     "CREATE": "Neue Rechnung erstellen"
   },
+  "BIKES":    {
+    "TITLE": "Bikeplan"
+  },
   "LAYOUT":  {
     "PAGE_LOADING": "Seite wird geladen..."
   },
