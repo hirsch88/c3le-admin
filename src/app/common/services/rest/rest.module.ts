@@ -1,9 +1,9 @@
 /// <reference path="../../../../../typings/tsd.d.ts" />
 
-module c3.common.services.dtos {
+module c3.common.services.rest {
   'use strict';
 
-  export var Namespace = 'c3.common.services.dtos';
+  export var Namespace = 'c3.common.services.rest';
 
   export var ID = {
     UsersService: `${Namespace}.UsersService`

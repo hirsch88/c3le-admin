@@ -1,17 +1,17 @@
-/// <reference path="../../../../../../typings/tsd.d.ts"/>
+/// <reference path="../../../../../typings/tsd.d.ts"/>
 
-module c3.common.services.dtos.event {
+module c3.common.services.rest {
   'use strict';
 
 
   // INTERFACE ////////////////////////////////////////////////////////////////////
-  interface ITeamsService {
-
+  interface IUsersService {
+    getMySelf(): Promise<models.UserModel>;
   }
 
 
   // SERVICE ////////////////////////////////////////////////////////////////////
-  export class TeamsService implements ITeamsService, core.interfaces.ICrudable {
+  export class UsersService implements IUsersService, core.interfaces.ICrudable {
     private backend: common.services.utils.Backend;
     private eventBackend: common.services.utils.Backend;
     private log: core.util.Logger;
@@ -28,18 +28,27 @@ module c3.common.services.dtos.event {
                 loggerService: core.util.LoggerService,
                 eventsService: common.services.EventsService) {
 
-      this.eventBackend = backendService.create(`/events/${eventsService.getActiveEventId()}/teams`);
-      this.backend = backendService.create('/teams');
-      this.log = loggerService.create(ID.TeamsService);
+      this.eventBackend = backendService.create(`/events/${eventsService.getActiveEventId()}/users`);
+      this.backend = backendService.create('/users');
+      this.log = loggerService.create(ID.UsersService);
     }
 
     // PUBLIC API /////////////////////////////////////////////
+    getMySelf() {
+      var promise = this.backend.custom('/self').read();
+      return promise.then((r) => {
+        var user = new models.UserModel(r);
+        this.log.info('getMySelf', user);
+        return user;
+      });
+    }
+
     readAll() {
       var promise = this.eventBackend.all().read();
       return promise.then((r: Array<any>) => {
-        var teams = r.map((d) => new models.event.TeamModel(d));
-        this.log.info('readAll', teams);
-        return teams;
+        var users = r.map((u) => new models.UserModel(u));
+        this.log.info('readAll', users);
+        return users;
       });
     }
 
@@ -66,10 +75,10 @@ module c3.common.services.dtos.event {
   }
 
   angular
-    .module(ID.TeamsService, [
+    .module(ID.UsersService, [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
       common.services.ID.EventsService
     ])
-    .service(ID.TeamsService, TeamsService);
+    .service(ID.UsersService, UsersService);
 }

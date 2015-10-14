@@ -1,9 +1,9 @@
 /// <reference path="../../../../../../typings/tsd.d.ts" />
 
-module c3.common.services.dtos.event {
+module c3.common.services.rest.event {
   'use strict';
 
-  export var Namespace = 'c3.common.services.dtos.event';
+  export var Namespace = 'c3.common.services.rest.event';
 
   export var ID = {
     TeamsService: `${Namespace}.TeamsService`

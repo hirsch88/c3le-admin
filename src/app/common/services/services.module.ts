@@ -11,7 +11,7 @@ module c3.common.services {
 
   angular
     .module(Namespace, [
-      `${Namespace}.dtos`,
+      `${Namespace}.rest`,
       `${Namespace}.utils`,
       `${Namespace}.stores`,
 
