@@ -55,7 +55,7 @@
     "node-sass": "^2.0.4",
     "require-dir": "*",
     "tsd": "^0.6.0",
-    "typescript": "~1.4.0",
+    "typescript": "~1.6.0",
     "wiredep": "^2.2.2"
   },
   "scripts": {
