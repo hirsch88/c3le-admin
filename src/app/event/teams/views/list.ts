@@ -19,12 +19,12 @@ module c3.event.teams.views {
     static $inject = [
       '$scope',
       core.util.ID.EventHandler,
-      c3.common.services.dtos.ID.UsersService,
+      c3.common.services.dtos.ID.TeamsService,
       c3.common.services.utils.ID.TableService
     ];
 
     constructor($scope, eventHandler,
-                private usersService: c3.common.services.dtos.UsersService,
+                private usersService: c3.common.services.dtos.TeamsService,
                 private tableService: c3.common.services.utils.TableFactory) {
       super($scope, eventHandler);
       this.activate();
@@ -47,7 +47,7 @@ module c3.event.teams.views {
     .module(ID.List, [
       'ui.router',
       c3.core.util.ID.EventHandler,
-      c3.common.services.dtos.ID.UsersService,
+      c3.common.services.dtos.ID.TeamsService,
       c3.common.services.utils.ID.TableService
     ])
     .controller(ID.ListController, ListController);
