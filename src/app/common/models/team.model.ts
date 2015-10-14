@@ -6,7 +6,7 @@ module c3.common.models {
   // MODEL ////////////////////////////////////////////////////////////////////
   export class TeamModel {
     id: number;
-    name: string;
+    teamName: string;
     createdAt: moment.Moment;
     updatedAt: moment.Moment;
     deletedAt: any;
@@ -15,7 +15,7 @@ module c3.common.models {
     // CONSTRUCTOR /////////////////////////////////////////////
     constructor(response: any) {
       this.id = response['id'];
-      this.name = response['name'];
+      this.teamName = response['teamName'];
       this.createdAt = moment(response['createdAt']);
       this.updatedAt = moment(response['updatedAt']);
       this.deletedAt = response['deletedAt'];
@@ -26,7 +26,7 @@ module c3.common.models {
     mapDataForApi() {
       var data = {};
       data['id'] = this.id;
-      data['name'] = this.name;
+      data['teamName'] = this.teamName;
       data['createdAt'] = this.createdAt.format('YYYY-mm-dd HH:MM:SS');
       data['updatedAt'] = this.updatedAt.format('YYYY-mm-dd HH:MM:SS');
       data['deletedAt'] = this.deletedAt;

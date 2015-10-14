@@ -35,7 +35,7 @@
                   <thead>
                   <th class="header" ng-class="vm.table.getOrderClass('id')" ng-click="vm.table.setOrderBy('id')">
                     <a>{{'COMMON.LABELS.ID' | translate }}</a></th>
-                  <th class="header" ng-class="vm.table.getOrderClass('name')" ng-click="vm.table.setOrderBy('name')">
+                  <th class="header" ng-class="vm.table.getOrderClass('teamName')" ng-click="vm.table.setOrderBy('teamName')">
                     <a>{{'COMMON.LABELS.NAME' | translate }}</a>
                   </th>
                   <th class="header" ng-class="vm.table.getOrderClass('updatedAt')"
@@ -55,7 +55,7 @@
                     | orderBy: vm.table.orderValue:vm.table.isRevert">
 
                     <td><span>{{user.id}}</span></td>
-                    <td><span>{{user.name}}</span></td>
+                    <td><span>{{user.teamName}}</span></td>
                     <td><p>{{user.updatedAt | c3DateFilter:'DD.MM.YYYY HH:MM:SS'}}</p></td>
                     <td><p>{{user.createdAt | c3DateFilter:'DD.MM.YYYY HH:MM:SS'}}</p></td>
                     <td>
