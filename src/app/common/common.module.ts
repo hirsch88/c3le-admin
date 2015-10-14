@@ -9,7 +9,6 @@ module c3.common {
     .module(Namespace, [
       `${Namespace}.directives`,
       `${Namespace}.filters`,
-      `${Namespace}.models`,
       `${Namespace}.services`,
       `${Namespace}.utils`
     ]);
