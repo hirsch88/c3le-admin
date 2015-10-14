@@ -6,10 +6,11 @@ module c3.common.services.stores {
   export var Namespace = 'c3.common.services.stores';
 
   export var ID = {
+    EventStoreService: `${Namespace}.EventStoreService`
   };
 
   angular
     .module(Namespace, [
-
+      ID.EventStoreService
     ]);
 }

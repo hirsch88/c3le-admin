@@ -10,7 +10,7 @@ var _ = require('lodash');
  * INJECT
  * Injects all bower and application scripts into the main index.html file
  */
-gulp.task('inject', ['css-auto-prefix'], function () {
+gulp.task('inject', ['ts-compile', 'sass'], function () {
 
   var source = [];
   source.push(path.join(projectConfig.path.srcDir, projectConfig.path.assets.css));
@@ -19,30 +19,15 @@ gulp.task('inject', ['css-auto-prefix'], function () {
     source.push(item);
   });
 
+  var bowerFiles = projectConfig.bower.files.main().filter(function (filePath) {
+    return filePath.indexOf(projectConfig.ignoredBowerFiles) < 0 ;
+  });
+
   return gulp
     .src(path.join(projectConfig.path.srcDir, projectConfig.path.mainTpl))
-    .pipe($.inject(gulp.src(projectConfig.bower.files.main(), {read: false}), {name: 'bower', relative: true}))
+    .pipe($.inject(gulp.src(bowerFiles, {read: false}), {name: 'bower', relative: true}))
     .pipe($.inject(gulp.src(source), { relative: true }))
     .pipe($.rename(projectConfig.path.main))
     .pipe(gulp.dest(projectConfig.path.srcDir));
 
 });
-
-//
-//gulp.task('ts-inject', ['ts-compile'], function () {
-//
-//  var source = [];
-//  source.push(path.join(projectConfig.path.srcDir, projectConfig.path.assets.css));
-//
-//  _.forEach(projectConfig.angular.files, function (item) {
-//    source.push(item);
-//  });
-//
-//  return gulp
-//    .src(path.join(projectConfig.path.srcDir, projectConfig.path.main))
-//    .pipe($.inject(gulp.src(source), { relative: true }))
-//    .pipe($.rename(projectConfig.path.main))
-//    .pipe(gulp.dest(projectConfig.path.srcDir));
-//
-//});
-//

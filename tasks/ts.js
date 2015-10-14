@@ -2,4 +2,4 @@
 
 var gulp = require('gulp');
 
-gulp.task('ts', ['ts-inject']);
+gulp.task('ts', ['inject']);

@@ -6,11 +6,13 @@ module c3.common.services.rest.event {
   export var Namespace = 'c3.common.services.rest.event';
 
   export var ID = {
-    TeamsService: `${Namespace}.TeamsService`
+    TeamsRestService: `${Namespace}.TeamsRestService`,
+    EventsRestService: `${Namespace}.EventsRestService`
   };
 
   angular
     .module(Namespace, [
-      ID.TeamsService
+      ID.TeamsRestService,
+      ID.EventsRestService
     ]);
 }

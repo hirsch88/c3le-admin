@@ -6,11 +6,11 @@ module c3.common.services.rest {
   export var Namespace = 'c3.common.services.rest';
 
   export var ID = {
-    UsersService: `${Namespace}.UsersService`
+    UsersRestService: `${Namespace}.UsersRestService`
   };
 
   angular
     .module(Namespace, [
-      ID.UsersService
+      ID.UsersRestService
     ]);
 }

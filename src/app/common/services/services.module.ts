@@ -6,7 +6,6 @@ module c3.common.services {
   export var Namespace = 'c3.common.services';
 
   export var ID = {
-    EventsService: `${Namespace}.EventsService`
   };
 
   angular
@@ -14,7 +13,5 @@ module c3.common.services {
       `${Namespace}.rest`,
       `${Namespace}.utils`,
       `${Namespace}.stores`,
-
-      ID.EventsService
     ]);
 }

@@ -5,13 +5,13 @@ module c3.common.services.rest {
 
 
   // INTERFACE ////////////////////////////////////////////////////////////////////
-  interface IUsersService {
+  interface IUsersRestService {
     getMySelf(): Promise<models.UserModel>;
   }
 
 
   // SERVICE ////////////////////////////////////////////////////////////////////
-  export class UsersService implements IUsersService, core.interfaces.ICrudable {
+  export class UsersRestService implements IUsersRestService, core.interfaces.ICrudable {
     private backend: common.services.utils.Backend;
     private eventBackend: common.services.utils.Backend;
     private log: core.util.Logger;
@@ -21,16 +21,16 @@ module c3.common.services.rest {
     static $inject = [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
-      common.services.ID.EventsService
+      common.services.stores.ID.EventStoreService
     ];
 
     constructor(backendService: common.services.utils.BackendService,
                 loggerService: core.util.LoggerService,
-                eventsService: common.services.EventsService) {
+                eventsService: common.services.stores.EventStoreService) {
 
       this.eventBackend = backendService.create(`/events/${eventsService.getActiveEventId()}/users`);
       this.backend = backendService.create('/users');
-      this.log = loggerService.create(ID.UsersService);
+      this.log = loggerService.create(ID.UsersRestService);
     }
 
     // PUBLIC API /////////////////////////////////////////////
@@ -75,10 +75,10 @@ module c3.common.services.rest {
   }
 
   angular
-    .module(ID.UsersService, [
+    .module(ID.UsersRestService, [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
-      common.services.ID.EventsService
+      common.services.stores.ID.EventStoreService
     ])
-    .service(ID.UsersService, UsersService);
+    .service(ID.UsersRestService, UsersRestService);
 }

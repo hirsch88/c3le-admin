@@ -18,21 +18,21 @@ module c3.layout.directives {
     user: Promise<common.models.UserModel>;
   }
 
-  class PageHeaderController implements IPageHeaderController{
+  class PageHeaderController implements IPageHeaderController {
     user: Promise<common.models.UserModel>;
 
     static $inject = [
-      common.services.rest.ID.UsersService
+      common.services.rest.ID.UsersRestService
     ];
 
-    constructor(usersService: common.services.rest.UsersService) {
+    constructor(usersService: common.services.rest.UsersRestService) {
       this.user = usersService.getMySelf();
     }
   }
 
   angular
     .module(ID.PageHeader, [
-      common.services.rest.ID.UsersService
+      common.services.rest.ID.UsersRestService
     ])
     .directive('c3PageHeader', () => new PageHeaderDirective())
     .controller(ID.PageHeaderController, PageHeaderController);

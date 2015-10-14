@@ -16,7 +16,7 @@ var plumber = require('gulp-plumber');
  * Generates a new css file from our sass files
  */
 
-gulp.task('sass', ['css-auto-prefix', 'sass-inject']);
+gulp.task('sass', ['css-auto-prefix']);
 
 gulp.task('sass-compile', function () {
 
@@ -41,15 +41,15 @@ gulp.task('sass-compile', function () {
 
 });
 
-gulp.task('sass-inject', ['sass-compile'], function () {
-
-  var source = [];
-  source.push(path.join(projectConfig.path.srcDir, projectConfig.path.assets.css));
-
-  return gulp
-    .src(path.join(projectConfig.path.srcDir, projectConfig.path.main))
-    .pipe($.inject(gulp.src(source), {relative: true}))
-    .pipe($.rename(projectConfig.path.main))
-    .pipe(gulp.dest(projectConfig.path.srcDir));
-
-});
+//gulp.task('sass-inject', ['sass-compile'], function () {
+//
+//  var source = [];
+//  source.push(path.join(projectConfig.path.srcDir, projectConfig.path.assets.css));
+//
+//  return gulp
+//    .src(path.join(projectConfig.path.srcDir, projectConfig.path.main))
+//    .pipe($.inject(gulp.src(source), {relative: true}))
+//    .pipe($.rename(projectConfig.path.main))
+//    .pipe(gulp.dest(projectConfig.path.srcDir));
+//
+//});

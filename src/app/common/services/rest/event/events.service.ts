@@ -5,15 +5,14 @@ module c3.common.services.rest.event {
 
 
   // INTERFACE ////////////////////////////////////////////////////////////////////
-  interface ITeamsRestService {
-
+  interface IEventsRestService {
+    readActive(): Promise<models.event.EventModel>
   }
 
 
   // SERVICE ////////////////////////////////////////////////////////////////////
-  export class TeamsRestService implements ITeamsRestService, core.interfaces.ICrudable {
+  export class EventsRestService implements IEventsRestService, core.interfaces.ICrudable {
     private backend: common.services.utils.Backend;
-    private eventBackend: common.services.utils.Backend;
     private log: core.util.Logger;
 
 
@@ -21,26 +20,23 @@ module c3.common.services.rest.event {
     static $inject = [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
-      common.services.stores.ID.EventStoreService
     ];
 
     constructor(backendService: common.services.utils.BackendService,
-                loggerService: core.util.LoggerService,
-                eventsService: common.services.stores.EventStoreService) {
+                loggerService: core.util.LoggerService) {
 
-      this.eventBackend = backendService.create(`/events/${eventsService.getActiveEventId()}/teams`);
-      this.backend = backendService.create('/teams');
-      this.log = loggerService.create(ID.TeamsRestService);
+      this.backend = backendService.create('/events');
+      this.log = loggerService.create(ID.EventsRestService);
     }
 
     // PUBLIC API /////////////////////////////////////////////
+    readActive() {
+      var promise = this.backend.custom('/acitve').read();
+      return promise.then((r) => new models.event.EventModel(r));
+    }
+
     readAll() {
-      var promise = this.eventBackend.all().read();
-      return promise.then((r: Array<any>) => {
-        var teams = r.map((d) => new models.event.TeamModel(d));
-        this.log.info('readAll', teams);
-        return teams;
-      });
+      return undefined;
     }
 
     read(id: string): Promise<any> {
@@ -66,10 +62,9 @@ module c3.common.services.rest.event {
   }
 
   angular
-    .module(ID.TeamsRestService, [
+    .module(ID.EventsRestService, [
       common.services.utils.ID.BackendService,
-      core.util.ID.Logger,
-      common.services.stores.ID.EventStoreService
+      core.util.ID.Logger
     ])
-    .service(ID.TeamsRestService, TeamsRestService);
+    .service(ID.EventsRestService, EventsRestService);
 }
