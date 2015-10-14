@@ -4,10 +4,6 @@ module c3.common.services.utils {
   'use strict';
 
 
-  interface IFactoy {
-    create();
-  }
-
   // INTERFACE ////////////////////////////////////////////////////////////////////
   interface ITableService {
     filterValue: string;

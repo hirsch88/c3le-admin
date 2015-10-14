@@ -4,27 +4,6 @@ module c3.event.dashboard.views {
   'use strict';
 
 
-  // STATE /////////////////////////////////////////////////////////////////////////
-  var stateConfig = ($stateProvider: ng.ui.IStateProvider) => {
-    $stateProvider
-      .state('admin.event.dashboard', {
-        url: '/dashboard',
-        views: {
-          'content': {
-            templateUrl: core.util.Utils.templateUrl(ID.Dashboard),
-            controller: ID.DashboardController,
-            controllerAs: 'dashboard'
-          }
-        },
-        data: {
-          navigationKey: 'event',
-          session: true
-        }
-      });
-  };
-  stateConfig.$inject = ['$stateProvider'];
-
-
   // INTERFACE ////////////////////////////////////////////////////////////////////
   interface IDashboardScope {
     prop: string;
@@ -77,7 +56,6 @@ module c3.event.dashboard.views {
     .module(ID.Dashboard, [
       'ui.router'
     ])
-    .config(stateConfig)
     .run(sidebar)
     .controller(ID.DashboardController, DashboardController);
 }

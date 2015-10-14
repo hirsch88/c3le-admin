@@ -3,23 +3,6 @@
 module c3.auth.views {
   'use strict';
 
-
-  // STATE /////////////////////////////////////////////////////////////////////////
-  var stateConfig = ($stateProvider: ng.ui.IStateProvider) => {
-    $stateProvider
-      .state('public.signin', {
-        url: '/auth/signin',
-        views: {
-          'content': {
-            templateUrl: core.util.Utils.templateUrl(ID.SignIn),
-            controller: ID.SignInController,
-            controllerAs: 'vm'
-          }
-        }
-      });
-  };
-  stateConfig.$inject = ['$stateProvider'];
-
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class SignInController extends core.util.ViewController {
     form: any;
@@ -75,6 +58,5 @@ module c3.auth.views {
     .module(ID.SignIn, [
       services.ID.AuthenticationService
     ])
-    .config(stateConfig)
     .controller(ID.SignInController, SignInController);
 }

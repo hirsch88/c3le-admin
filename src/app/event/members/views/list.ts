@@ -4,27 +4,6 @@ module c3.event.members.views {
   'use strict';
 
 
-  // STATE /////////////////////////////////////////////////////////////////////////
-  var stateConfig = ($stateProvider: ng.ui.IStateProvider) => {
-    $stateProvider
-      .state('admin.event.members', {
-        url: '/members',
-        views: {
-          'content': {
-            templateUrl: core.util.Utils.templateUrl(ID.List),
-            controller: ID.ListController,
-            controllerAs: 'vm'
-          }
-        },
-        data: {
-          navigationKey: 'event',
-          session: true
-        }
-      });
-  };
-  stateConfig.$inject = ['$stateProvider'];
-
-
   // INTERFACE ////////////////////////////////////////////////////////////////////
   interface IListScope {
 
@@ -77,7 +56,6 @@ module c3.event.members.views {
       c3.common.services.dtos.ID.UsersService,
       c3.common.services.utils.ID.TableService
     ])
-    .config(stateConfig)
     .run(sidebar)
     .controller(ID.ListController, ListController);
 }
