@@ -46,16 +46,9 @@ module c3.event.dashboard.views {
 
   }
 
-  // SIDEBAR ///////////////////////////////////////////////////////////////////////
-  var sidebar = (sidebarService: layout.services.SidebarService) => sidebarService.push(
-    'dashboard', 'DASHBOARD.TITLE', 'fa-dashboard', 'admin.event.dashboard', 'eventAdmin'
-  );
-  sidebar.$inject = [layout.services.ID.SidebarService];
-
   angular
     .module(ID.Dashboard, [
       'ui.router'
     ])
-    .run(sidebar)
     .controller(ID.DashboardController, DashboardController);
 }

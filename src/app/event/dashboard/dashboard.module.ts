@@ -8,6 +8,8 @@ module c3.event.dashboard {
   angular
     .module(Namespace, [
       `${Namespace}.Routes`,
+      `${Namespace}.Sidebar`,
+
       `${Namespace}.views`,
     ]);
 }

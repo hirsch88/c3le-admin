@@ -43,12 +43,6 @@ module c3.event.members.views {
 
   }
 
-  // SIDEBAR ///////////////////////////////////////////////////////////////////////
-  var sidebar = (sidebarService: layout.services.SidebarService) => sidebarService.push(
-    'members', 'EVENT_MEMBERS.TITLE', 'fa-user', 'admin.event.members', 'eventAdmin'
-  );
-  sidebar.$inject = [layout.services.ID.SidebarService];
-
   angular
     .module(ID.List, [
       'ui.router',
@@ -56,6 +50,5 @@ module c3.event.members.views {
       c3.common.services.dtos.ID.UsersService,
       c3.common.services.utils.ID.TableService
     ])
-    .run(sidebar)
     .controller(ID.ListController, ListController);
 }
