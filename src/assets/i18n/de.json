@@ -162,6 +162,10 @@
     "TITLE": "Teams",
     "CREATE": "Neues Team erstellen"
   },
+  "BILLS":    {
+    "TITLE": "Buchhaltung",
+    "CREATE": "Neue Rechnung erstellen"
+  },
   "LAYOUT":  {
     "PAGE_LOADING": "Seite wird geladen..."
   },
