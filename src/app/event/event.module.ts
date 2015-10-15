@@ -12,6 +12,8 @@ module c3.event {
       `${Namespace}.bikes`,
       `${Namespace}.bills`,
       `${Namespace}.teams`,
-      `${Namespace}.members`
+      `${Namespace}.members`,
+      `${Namespace}.abos`,
+      `${Namespace}.events`
     ]);
 }

@@ -166,8 +166,16 @@
     "TITLE": "Buchhaltung",
     "CREATE": "Neue Rechnung erstellen"
   },
+  "EVENT_ABOS":    {
+    "TITLE": "Tickets",
+    "CREATE": "Neues Ticket erstellen"
+  },
   "BIKES":    {
     "TITLE": "Bikeplan"
+  },
+  "EVENTS":    {
+    "TITLE": "Event Management",
+    "CREATE": "Neuer Event anlegen"
   },
   "LAYOUT":  {
     "PAGE_LOADING": "Seite wird geladen..."
