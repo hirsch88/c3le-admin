@@ -69,7 +69,7 @@ module c3.common.services.utils {
             resolve(noty({
                 type: type,
                 text: translation
-                //timeout: timeout
+                timeout: timeout
               })
             );
           })
@@ -77,7 +77,7 @@ module c3.common.services.utils {
             resolve(noty({
                 type: type,
                 text: text
-                //timeout: timeout
+                timeout: timeout
               })
             );
           });
