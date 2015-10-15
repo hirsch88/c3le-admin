@@ -19,15 +19,17 @@ module c3.layout.directives {
   }
 
   class PageHeaderController implements IPageHeaderController {
-    user: Promise<common.models.UserModel>;
-
     static $inject = [
       common.services.rest.ID.UsersRestService
     ];
 
+    user: Promise<common.models.UserModel>;
+
+
     constructor(usersService: common.services.rest.UsersRestService) {
       this.user = usersService.getMySelf();
     }
+
   }
 
   angular

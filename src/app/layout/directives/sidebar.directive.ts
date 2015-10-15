@@ -13,11 +13,12 @@ module c3.layout.directives {
 
 
   class SidebarController {
-    public selectedEnvironment: string = 'eventAdmin';
-
     static $inject = [
       services.ID.SidebarService
     ];
+
+    public selectedEnvironment: string = 'eventAdmin';
+
 
     constructor(private sidebarService: services.SidebarService) {
 

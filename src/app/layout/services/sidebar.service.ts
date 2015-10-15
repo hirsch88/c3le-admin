@@ -39,10 +39,10 @@ module c3.layout.services {
   }
 
   export class SidebarService {
+    static $inject = [];
 
     private stack: Array<SidebarItem> = [];
 
-    static $inject = [];
 
     constructor() {
       ;

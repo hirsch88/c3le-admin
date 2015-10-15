@@ -5,13 +5,6 @@ module c3.auth.views {
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class SignInController extends core.util.ViewController {
-    form: any;
-    promise: Promise<any>;
-
-    email: string;
-    password: string;
-
-    // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
       core.util.ID.EventHandler,
@@ -19,6 +12,14 @@ module c3.auth.views {
       '$state'
     ];
 
+    form: any;
+    promise: Promise<any>;
+
+    email: string;
+    password: string;
+
+
+    // CONSTRUCTOR /////////////////////////////////////////////
     constructor($scope,
                 eventHandler,
                 private authenticationService: services.AuthenticationService,
@@ -27,9 +28,6 @@ module c3.auth.views {
       this.init();
     }
 
-    private init() {
-      this.reset();
-    }
 
     // PUBLIC API /////////////////////////////////////////////
     submit() {
@@ -49,6 +47,12 @@ module c3.auth.views {
     reset() {
       this.email = '';
       this.password = '';
+    }
+
+
+    // PRIVATE API /////////////////////////////////////////////
+    private init() {
+      this.reset();
     }
 
 

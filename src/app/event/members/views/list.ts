@@ -12,10 +12,6 @@ module c3.event.members.views {
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class ListController extends core.util.ViewController implements IListScope {
-    users: Promise<Array<c3.common.models.UserModel>>;
-    table: c3.common.services.utils.TableService;
-
-    // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
       core.util.ID.EventHandler,
@@ -23,16 +19,16 @@ module c3.event.members.views {
       c3.common.services.utils.ID.TableService
     ];
 
+    users: Promise<Array<c3.common.models.UserModel>>;
+    table: c3.common.services.utils.TableService;
+
+
+    // CONSTRUCTOR /////////////////////////////////////////////
     constructor($scope, eventHandler,
                 private usersService: c3.common.services.rest.UsersRestService,
                 private tableService: c3.common.services.utils.TableFactory) {
       super($scope, eventHandler);
-      this.activate();
-    }
-
-    private activate() {
-      this.users = this.usersService.readAll();
-      this.table = this.tableService.create();
+      this.init();
     }
 
 
@@ -40,6 +36,10 @@ module c3.event.members.views {
 
 
     // PRIVATE API ////////////////////////////////////////////
+    private init() {
+      this.users = this.usersService.readAll();
+      this.table = this.tableService.create();
+    }
 
   }
 

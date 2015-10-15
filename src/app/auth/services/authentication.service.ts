@@ -35,16 +35,19 @@ module c3.auth.services {
 
   // SERVICE ////////////////////////////////////////////////////////////////////
   export class AuthenticationService implements IAuthenticationService {
-    static API_PATH = '/oauth/token';
-
-    private session: AuthenticatioSession = new AuthenticatioSession();
-
-    // CONSTRUCTOR /////////////////////////////////////////////
+    // STATIC /////////////////////////////////////////////
     static $inject = [
       '$http',
       core.constants.ID.AppConfig
     ];
+    static API_PATH = '/oauth/token';
 
+
+    // VARIABLES /////////////////////////////////////////////
+    private session: AuthenticatioSession = new AuthenticatioSession();
+
+
+    // CONSTRUCTOR /////////////////////////////////////////////
     constructor(private $http: ng.IHttpService,
                 private appConfig: core.constants.IAppConfig) {
 

@@ -12,22 +12,23 @@ module c3.common.services.rest.event {
 
   // SERVICE ////////////////////////////////////////////////////////////////////
   export class EventsRestService implements IEventsRestService, core.interfaces.ICrudable {
-    private backend: common.services.utils.Backend;
-    private log: core.util.Logger;
-
-
-    // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
     ];
 
+    private backend: common.services.utils.Backend;
+    private log: core.util.Logger;
+
+
+    // CONSTRUCTOR /////////////////////////////////////////////
     constructor(backendService: common.services.utils.BackendService,
                 loggerService: core.util.LoggerService) {
 
       this.backend = backendService.create('/events');
       this.log = loggerService.create(ID.EventsRestService);
     }
+
 
     // PUBLIC API /////////////////////////////////////////////
     readActive() {

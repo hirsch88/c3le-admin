@@ -17,7 +17,7 @@ module c3.core.config {
     });
 
     $translateProvider.preferredLanguage('de');
-    $translateProvider.useSanitizeValueStrategy(null);
+    $translateProvider.useSanitizeValueStrategy('sanitizeParameters');
 
 
   };

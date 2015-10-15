@@ -12,18 +12,18 @@ module c3.common.services.rest.event {
 
   // SERVICE ////////////////////////////////////////////////////////////////////
   export class TeamsRestService implements ITeamsRestService, core.interfaces.ICrudable {
-    private backend: common.services.utils.Backend;
-    private eventBackend: common.services.utils.Backend;
-    private log: core.util.Logger;
-
-
-    // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       common.services.utils.ID.BackendService,
       core.util.ID.Logger,
       common.services.stores.ID.EventStoreService
     ];
 
+    private backend: common.services.utils.Backend;
+    private eventBackend: common.services.utils.Backend;
+    private log: core.util.Logger;
+
+
+    // CONSTRUCTOR /////////////////////////////////////////////
     constructor(backendService: common.services.utils.BackendService,
                 loggerService: core.util.LoggerService,
                 eventsService: common.services.stores.EventStoreService) {

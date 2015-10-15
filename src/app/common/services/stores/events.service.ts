@@ -14,17 +14,17 @@ module c3.common.services.stores {
 
   // SERVICE ////////////////////////////////////////////////////////////////////
   export class EventStoreService implements IEventStoreService {
+    static $inject = [
+      core.util.ID.Logger,
+      common.services.rest.event.ID.EventsRestService
+    ];
+
     private pristine: boolean = false;
     private activeEvent: models.event.EventModel;
     private log: core.util.Logger;
 
 
     // CONSTRUCTOR /////////////////////////////////////////////
-    static $inject = [
-      core.util.ID.Logger,
-      common.services.rest.event.ID.EventsRestService
-    ];
-
     constructor(loggerService: core.util.LoggerService,
                 private eventRestService: common.services.rest.event.EventsRestService) {
       this.log = loggerService.create(ID.EventStoreService);

@@ -12,27 +12,19 @@ module c3.event.dashboard.views {
 
   // CONTROLLER ////////////////////////////////////////////////////////////////////
   class DashboardController extends core.util.ViewController implements IDashboardScope {
-    prop: string;
-
-
-    // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
       core.util.ID.EventHandler,
       common.services.utils.ID.NotyService
     ];
 
+    prop: string;
+
+
+    // CONSTRUCTOR /////////////////////////////////////////////
     constructor($scope, eventHandler, private notyService: common.services.utils.NotyService) {
       super($scope, eventHandler);
       this.init();
-    }
-
-    private init() {
-      // TODO: call some service to asynchronously return data
-
-      // Event Handling
-      this.addListener('someEvent', this.notyDefault);
-      this.fireEvent('otherEvent', this.prop);
     }
 
 
@@ -63,6 +55,13 @@ module c3.event.dashboard.views {
 
 
     // PRIVATE API ////////////////////////////////////////////
+    private init() {
+      // TODO: call some service to asynchronously return data
+
+      // Event Handling
+      this.addListener('someEvent', this.notyDefault);
+      this.fireEvent('otherEvent', this.prop);
+    }
 
   }
 
