@@ -8,7 +8,8 @@ module c3.event.members {
     'EVENT_MEMBERS.TITLE',
     'fa-user',
     'admin.event.members',
-    'eventAdmin'
+    'eventAdmin',
+    4
   );
   sidebar.$inject = [layout.services.ID.SidebarService];
 

@@ -115,18 +115,18 @@ module c3.common.services.utils {
     maxVisible: 5, // you can set max visible notification for dismissQueue true option,
     killer: false, // for close all notifications before show
     closeWith: ['click'], // ['click', 'button', 'hover', 'backdrop']
-    callback: {
-      onShow: function () {;
-      },
-      afterShow: function () {;
-      },
-      onClose: function () {;
-      },
-      afterClose: function () {;
-      },
-      onCloseClick: function () {;
-      }
-    },
+    //callback: {
+    //  onShow: function () {;
+    //  },
+    //  afterShow: function () {;
+    //  },
+    //  onClose: function () {;
+    //  },
+    //  afterClose: function () {;
+    //  },
+    //  onCloseClick: function () {;
+    //  }
+    //},
     buttons: false // an array of buttons
   };
 

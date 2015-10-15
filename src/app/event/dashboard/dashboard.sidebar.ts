@@ -8,7 +8,8 @@ module c3.event.dashboard {
     'DASHBOARD.TITLE',
     'fa-dashboard',
     'admin.event.dashboard',
-    'eventAdmin'
+    'eventAdmin',
+    0
   );
   sidebar.$inject = [layout.services.ID.SidebarService];
 

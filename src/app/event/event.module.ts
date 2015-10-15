@@ -8,11 +8,10 @@ module c3.event {
   angular
     .module(Namespace, [
       `${Namespace}.views`,
-
       `${Namespace}.dashboard`,
       `${Namespace}.bikes`,
       `${Namespace}.bills`,
       `${Namespace}.teams`,
-      `${Namespace}.members`,
+      `${Namespace}.members`
     ]);
 }

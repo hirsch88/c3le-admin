@@ -8,7 +8,8 @@ module c3.layout.services {
                 private _translateId: string,
                 private _iconClass: string,
                 private _state: string,
-                private _environment: string) {
+                private _environment: string,
+                private _position: Number) {
     }
 
     get key(): string {
@@ -31,6 +32,10 @@ module c3.layout.services {
       return this._environment;
     }
 
+    get position(): Number {
+      return this._position;
+    }
+
   }
 
   export class SidebarService {
@@ -43,8 +48,8 @@ module c3.layout.services {
       ;
     }
 
-    push(key: string, translateId: string, iconClass: string, state: string, environment: string) {
-      this.stack.push(new SidebarItem(key, translateId, iconClass, state, environment));
+    push(key: string, translateId: string, iconClass: string, state: string, environment: string, position: Number = 99) {
+      this.stack.push(new SidebarItem(key, translateId, iconClass, state, environment, position));
     }
 
     get(environment: string) {

@@ -8,7 +8,8 @@ module c3.event.bikes {
     'BIKES.TITLE',
     'fa-bicycle',
     'admin.event.bikes',
-    'eventAdmin'
+    'eventAdmin',
+    1
   );
   sidebar.$inject = [layout.services.ID.SidebarService];
 

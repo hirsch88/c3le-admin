@@ -8,7 +8,8 @@ module c3.event.bills {
     'BILLS.TITLE',
     'fa-usd',
     'admin.event.bills',
-    'eventAdmin'
+    'eventAdmin',
+    2
   );
   sidebar.$inject = [layout.services.ID.SidebarService];
 
