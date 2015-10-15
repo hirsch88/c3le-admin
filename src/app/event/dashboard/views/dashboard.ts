@@ -7,7 +7,6 @@ module c3.event.dashboard.views {
   // INTERFACE ////////////////////////////////////////////////////////////////////
   interface IDashboardScope {
     prop: string;
-    method(param: string): string;
   }
 
 
@@ -19,10 +18,11 @@ module c3.event.dashboard.views {
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$scope',
-      core.util.ID.EventHandler
+      core.util.ID.EventHandler,
+      common.services.utils.ID.NotyService
     ];
 
-    constructor($scope, eventHandler) {
+    constructor($scope, eventHandler, private notyService: common.services.utils.NotyService) {
       super($scope, eventHandler);
       this.init();
     }
@@ -31,14 +31,34 @@ module c3.event.dashboard.views {
       // TODO: call some service to asynchronously return data
 
       // Event Handling
-      this.addListener('someEvent', this.method);
+      this.addListener('someEvent', this.notyDefault);
       this.fireEvent('otherEvent', this.prop);
     }
 
 
     // PUBLIC API /////////////////////////////////////////////
-    method(param: string) {
-      return param;
+    notyDefault() {
+      this.notyService.alert('Text');
+    }
+
+    notySuccess() {
+      this.notyService.success('Text');
+    }
+
+    notyInfo() {
+      this.notyService.info('Text');
+    }
+
+    notyWarn() {
+      this.notyService.warn('Text');
+    }
+
+    notyError() {
+      this.notyService.error('Text');
+    }
+
+    notyBusy() {
+      this.notyService.busy();
     }
 
 
@@ -48,7 +68,8 @@ module c3.event.dashboard.views {
 
   angular
     .module(ID.Dashboard, [
-      'ui.router'
+      'ui.router',
+      common.services.utils.ID.NotyService
     ])
     .controller(ID.DashboardController, DashboardController);
 }

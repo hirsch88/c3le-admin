@@ -1,5 +1,5 @@
 {
-  "COMMON":  {
+  "COMMON":        {
     "PLEASE_WAIT":  "Bitte warten!",
     "LABELS":       {
       "EMAIL":                "E-Mail",
@@ -141,52 +141,57 @@
     "MESSAGES":     {
     }
   },
-  "SIGNIN":  {
+  "SIGNIN":        {
     "TITLE":    "c3le Admin Panel",
     "MESSAGES": {
-      "ERROR": "Falsche E-Mail oder falsches Passwort!",
+      "ERROR":   "Falsche E-Mail oder falsches Passwort!",
       "PENDING": "Anmeldeprozess läuft"
     }
   },
-  "HOME":    {
+  "HOME":          {
     "TITLE": "Home"
   },
-  "DASHBOARD":    {
+  "DASHBOARD":     {
     "TITLE": "Dashboard"
   },
-  "EVENT_MEMBERS":    {
-    "TITLE": "Teilnehmer",
+  "EVENT_MEMBERS": {
+    "TITLE":  "Teilnehmer",
     "CREATE": "Neuer Teilnehmer erstellen"
   },
-  "TEAMS":    {
-    "TITLE": "Teams",
+  "TEAMS":         {
+    "TITLE":  "Teams",
     "CREATE": "Neues Team erstellen"
   },
-  "BILLS":    {
-    "TITLE": "Buchhaltung",
+  "BILLS":         {
+    "TITLE":  "Buchhaltung",
     "CREATE": "Neue Rechnung erstellen"
   },
   "EVENT_ABOS":    {
-    "TITLE": "Tickets",
+    "TITLE":  "Tickets",
     "CREATE": "Neues Ticket erstellen"
   },
-  "BIKES":    {
+  "BIKES":         {
     "TITLE": "Bikeplan"
   },
-  "EVENTS":    {
-    "TITLE": "Event Management",
+  "EVENTS":        {
+    "TITLE":  "Event Management",
     "CREATE": "Neuer Event anlegen"
   },
-  "LAYOUT":  {
+  "LAYOUT":        {
     "PAGE_LOADING": "Seite wird geladen..."
   },
-  "SIDEBAR": {
+  "SIDEBAR":       {
     "ENVIRONMENTS": {
       "eventAdmin":     "Event Admin",
       "clubAdmin":      "Verein Admin",
       "eventCheckIn":   "Event Check-In",
       "clubVitis":      "Verein Vitis",
       "clubInstructor": "Verein Instructor"
+    }
+  },
+  "MESSAGE":       {
+    "LOADING": {
+      "DEFAULT": "Lade Inhalt..."
     }
   }
 }
