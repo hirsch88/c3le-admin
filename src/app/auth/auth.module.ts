@@ -9,6 +9,6 @@ module c3.auth {
     .module(Namespace, [
       `${Namespace}.Routes`,
       `${Namespace}.services`,
-      `${Namespace}.views`,
+      `${Namespace}.controllers`,
     ]);
 }

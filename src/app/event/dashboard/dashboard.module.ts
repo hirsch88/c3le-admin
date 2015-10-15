@@ -10,6 +10,6 @@ module c3.event.dashboard {
       `${Namespace}.Routes`,
       `${Namespace}.Sidebar`,
 
-      `${Namespace}.views`,
+      `${Namespace}.controllers`,
     ]);
 }

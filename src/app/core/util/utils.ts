@@ -52,14 +52,27 @@ module c3.core.util {
     static templateUrl(module: string, templateName?: string) {
       var paths = module.split('.');
       var isDirective = Utils.includes(module, 'directives');
+      var isController = Utils.includes(module, 'controllers');
       paths[0] = 'app';
       paths[paths.length - 1] = templateName || (paths[paths.length - 1]);
-      if (templateName === undefined && isDirective) {
-        paths[paths.length - 1] += '.directive';
+
+      if (isDirective) {
+        paths[paths.length - 1] = paths[paths.length - 1].replace('Directive', '');
+        if (templateName === undefined) {
+          paths[paths.length - 1] += 'Template';
+        }
       }
+
+      if (isController) {
+        paths[paths.length - 1] = paths[paths.length - 1].replace('Controller', '');
+        paths[paths.length - 2] = 'views';
+        if (templateName === undefined) {
+          paths[paths.length - 1] += 'View';
+        }
+      }
+
       paths[paths.length - 1] += '.html';
-      return (paths.join('/'))
-        .toLowerCase();
+      return (paths.join('/'));
     }
 
 

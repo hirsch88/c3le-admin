@@ -7,6 +7,8 @@ module c3.layout {
 
   angular
     .module(Namespace, [
+      `${Namespace}.Routes`,
+
       `${Namespace}.services`,
       `${Namespace}.directives`,
       `${Namespace}.views`

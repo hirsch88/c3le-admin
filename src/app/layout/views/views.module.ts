@@ -7,7 +7,7 @@ module c3.layout.views {
 
   angular
     .module(Namespace, [
-      `${Namespace}.Admin`,
-      `${Namespace}.Public`
+      //`${Namespace}.Admin`,
+      //`${Namespace}.Public`
     ]);
 }

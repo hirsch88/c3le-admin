@@ -10,6 +10,6 @@ module c3.event.teams {
       `${Namespace}.Routes`,
       `${Namespace}.Sidebar`,
 
-      `${Namespace}.views`,
+      `${Namespace}.controllers`,
     ]);
 }
