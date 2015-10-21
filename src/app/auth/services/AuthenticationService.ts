@@ -109,7 +109,7 @@ module c3.auth.services {
 
 
   }
-
+  
   angular
     .module(ID.AuthenticationService, [])
     .service(ID.AuthenticationService, AuthenticationService);

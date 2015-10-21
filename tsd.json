@@ -24,7 +24,7 @@
       "commit": "c50b111ded0a3a18b87b5abffea3150d6aca94da"
     },
     "jquery/jquery.d.ts": {
-      "commit": "c50b111ded0a3a18b87b5abffea3150d6aca94da"
+      "commit": "af5b8275d1f2b92738b93fddabc461fc20c553a1"
     },
     "lodash/lodash.d.ts": {
       "commit": "c50b111ded0a3a18b87b5abffea3150d6aca94da"
@@ -43,6 +43,9 @@
     },
     "jquery.noty/jquery.noty.d.ts": {
       "commit": "a278148f0ec80f2aa9a2ec22f5089308f74dda47"
+    },
+    "highcharts/highcharts.d.ts": {
+      "commit": "af5b8275d1f2b92738b93fddabc461fc20c553a1"
     }
   }
 }
