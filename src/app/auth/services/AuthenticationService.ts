@@ -38,7 +38,7 @@ module c3.auth.services {
     // STATIC /////////////////////////////////////////////
     static $inject = [
       '$http',
-      core.constants.ID.AppConfig
+      core.config.ID.AppConfig
     ];
     static API_PATH = '/oauth/token';
 
@@ -49,7 +49,7 @@ module c3.auth.services {
 
     // CONSTRUCTOR /////////////////////////////////////////////
     constructor(private $http: ng.IHttpService,
-                private appConfig: core.constants.IAppConfig) {
+                private appConfig: core.config.AppConfig) {
 
     }
 
@@ -57,12 +57,12 @@ module c3.auth.services {
     // PUBLIC API /////////////////////////////////////////////
     signin(email: string, password: string): Promise<any> {
       return new Promise((resolve, reject) => {
-        this.$http.post(this.appConfig.BASE_URL + AuthenticationService.API_PATH, {
+        this.$http.post(this.appConfig.backendUrl + AuthenticationService.API_PATH, {
           'username': email || '',
           'password': password || '',
           'grant_type': 'password',
-          'client_id': this.appConfig.CLIENT_ID,
-          'client_secret': this.appConfig.CLIENT_SECRET
+          'client_id': this.appConfig.client_id,
+          'client_secret': this.appConfig.client_secret
         }, {
           ignoreLoadingBar: true
         })
@@ -83,11 +83,11 @@ module c3.auth.services {
 
     refresh(): Promise<any> {
       return new Promise((resolve, reject) => {
-        this.$http.post(this.appConfig.BASE_URL + AuthenticationService.API_PATH, {
+        this.$http.post(this.appConfig.backendUrl + AuthenticationService.API_PATH, {
           'refresh_token': this.session.refreshToken,
           'grant_type': 'refresh_token',
-          'client_id': this.appConfig.CLIENT_ID,
-          'client_secret': this.appConfig.CLIENT_SECRET
+          'client_id': this.appConfig.client_id,
+          'client_secret': this.appConfig.client_secret
         })
           .success(function (res) {
             this.session = new AuthenticationSession(res);
@@ -109,8 +109,10 @@ module c3.auth.services {
 
 
   }
-  
+
   angular
-    .module(ID.AuthenticationService, [])
+    .module(ID.AuthenticationService, [
+      core.config.ID.AppConfig
+    ])
     .service(ID.AuthenticationService, AuthenticationService);
 }

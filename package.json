@@ -4,10 +4,6 @@
   "description": "",
   "prefix": "c3",
   "main": "dist/index.html",
-  "cssExtension": "Sass",
-  "styleSourcemaps": "true",
-  "autoPrefixr": "true",
-  "language": "TypeScript",
   "private": true,
   "dependencies": {},
   "devDependencies": {

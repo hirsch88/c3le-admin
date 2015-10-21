@@ -10,8 +10,8 @@ module c3.event {
       `${Namespace}.Routes`,
 
       `${Namespace}.dashboard`,
-      `${Namespace}.teams`,
-      `${Namespace}.members`,
+      //`${Namespace}.teams`,
+      //`${Namespace}.members`,
       `${Namespace}.abos`
     ]);
 }

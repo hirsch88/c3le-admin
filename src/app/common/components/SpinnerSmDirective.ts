@@ -1,6 +1,6 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-module c3.common.directives {
+module c3.common.components {
   'use strict';
 
   class SpinnerSmDirective implements angular.IDirective {

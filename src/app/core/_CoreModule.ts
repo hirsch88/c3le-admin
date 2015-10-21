@@ -7,7 +7,6 @@ module c3.core {
 
   angular
     .module(Namespace, [
-      `${Namespace}.constants`,
       `${Namespace}.config`,
       `${Namespace}.router`,
       `${Namespace}.middleware`,

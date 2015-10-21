@@ -12,7 +12,8 @@ module c3.core.config {
     Promise: `${Namespace}.Promise`,
     Router: `${Namespace}.Router`,
     LoadingBar: `${Namespace}.LoadingBar`,
-    Log: `${Namespace}.Log`
+    Log: `${Namespace}.Log`,
+    AppConfig: `${Namespace}.AppConfig`
   };
 
   angular
@@ -23,6 +24,7 @@ module c3.core.config {
       ID.Promise,
       ID.Router,
       ID.LoadingBar,
-      ID.Log
+      ID.Log,
+      ID.AppConfig
     ]);
 }

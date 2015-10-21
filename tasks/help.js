@@ -1,11 +1,10 @@
 'use strict';
 
 var gulp = require('gulp');
-var $ = require('gulp-load-plugins')({lazy: true});
+var taskListing = require('gulp-task-listing');
 
 /**
  * TASKLISTING
  * List the available gulp tasks
  */
-gulp.task('help', $.taskListing);
-gulp.task('list', $.taskListing);
+gulp.task('help', taskListing);

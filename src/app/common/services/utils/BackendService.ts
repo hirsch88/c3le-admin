@@ -12,10 +12,10 @@ module c3.common.services.utils {
 
     constructor(path,
                 private $http,
-                private appConfig: core.constants.IAppConfig,
+                private appConfig: core.config.AppConfig,
                 private authenticationService: auth.services.AuthenticationService) {
       this.path = path || '';
-      this.path = this.appConfig.BASE_URL + this.path;
+      this.path = this.appConfig.backendUrl + this.path;
     }
 
     create(data: any, params?: any) {
@@ -88,7 +88,7 @@ module c3.common.services.utils {
     constructor(id,
                 path,
                 $http,
-                appConfig: core.constants.IAppConfig,
+                appConfig: core.config.AppConfig,
                 authenticationService: auth.services.AuthenticationService) {
       super(this.path, $http, appConfig, authenticationService);
       this.id = id;
@@ -105,7 +105,7 @@ module c3.common.services.utils {
 
     constructor(path: string,
                 private $http,
-                private appConfig: core.constants.IAppConfig,
+                private appConfig: core.config.AppConfig,
                 private authenticationService: auth.services.AuthenticationService) {
       this.path = path;
     }
@@ -144,12 +144,12 @@ module c3.common.services.utils {
     // CONSTRUCTOR /////////////////////////////////////////////
     static $inject = [
       '$http',
-      core.constants.ID.AppConfig,
+      core.config.ID.AppConfig,
       auth.services.ID.AuthenticationService
     ];
 
     constructor(private $http,
-                private appConfig: core.constants.IAppConfig,
+                private appConfig: core.config.AppConfig,
                 private authenticationService: auth.services.AuthenticationService) {
     }
 
@@ -161,7 +161,7 @@ module c3.common.services.utils {
 
   angular
     .module(ID.BackendService, [
-      core.constants.ID.AppConfig,
+      core.config.ID.AppConfig,
       auth.services.ID.AuthenticationService
     ])
     .service(ID.BackendService, BackendService);

@@ -11,6 +11,5 @@ module c3.layout {
 
       `${Namespace}.services`,
       `${Namespace}.directives`,
-      `${Namespace}.views`
     ]);
 }

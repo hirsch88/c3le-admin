@@ -7,7 +7,7 @@ module c3.common {
 
   angular
     .module(Namespace, [
-      `${Namespace}.directives`,
+      `${Namespace}.components`,
       `${Namespace}.filters`,
       `${Namespace}.services`,
       `${Namespace}.utils`

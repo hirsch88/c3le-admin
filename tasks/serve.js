@@ -1,11 +1,10 @@
 'use strict';
 
-var gulp = require('gulp');
-var projectConfig = require(process.cwd() + '/project.config.js')();
-var $ = require('gulp-load-plugins')({lazy: true});
-var browserSync = require('browser-sync');
-var reload = browserSync.reload;
-var path = require('path');
+var gulp        = require('gulp'),
+    gulpConfig  = require(process.cwd() +'/gulp.config.js'),
+    browserSync = require('browser-sync'),
+    reload      = browserSync.reload,
+    path        = require('path');
 
 /**
  * SERVE
@@ -14,53 +13,27 @@ var path = require('path');
 gulp.task('serve', ['build'], function () {
   browserSync({
     server: {
-      baseDir: projectConfig.path.srcDir,
-      index: projectConfig.path.main
+      baseDir: gulpConfig.paths.srcDir,
+      index: gulpConfig.paths.main
     },
     open: false,
     reloadDebounce: 300
   });
 
   // Bower
-  gulp.watch('./bower.json', ['bower-inject', 'fonts', reload]);
+  gulp.watch('./bower.json', ['index', 'fonts', reload]);
 
   // i18n
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.i18nDir, '*.json'), [reload]);
+  gulp.watch(path.join(gulpConfig.paths.srcDir, gulpConfig.paths.assets.i18nDir, '*.json'), [reload]);
 
   // SASS
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass']);
+  gulp.watch(path.join(gulpConfig.paths.srcDir, gulpConfig.paths.assets.sass), ['sass']);
 
   // TypeScript
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.scripts.replace(/\.js$/, '.ts')), ['ts', reload]);
+  gulp.watch(path.join(gulpConfig.paths.srcDir, gulpConfig.paths.app.scripts.replace(/\.js$/, '.ts')), ['ts-compile', reload]);
 
   // Templates
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.app.templates), ['inject', reload]);
+  gulp.watch(path.join(gulpConfig.paths.srcDir, gulpConfig.paths.app.templates), [reload]);
+  gulp.watch(path.join(gulpConfig.paths.srcDir, gulpConfig.paths.mainTpl), ['index', reload]);
 
-});
-
-gulp.task('serve-light', function () {
-  browserSync({
-    server: {
-      baseDir: projectConfig.path.srcDir,
-      index: projectConfig.path.main
-    },
-    open: false,
-    reloadDebounce: 300
-  });
-
-  // SASS
-  gulp.watch(path.join(projectConfig.path.srcDir, projectConfig.path.assets.sass), ['sass']);
-  gulp.watch('./bower.json', ['bower-inject', 'fonts']);
-
-});
-
-gulp.task('serve-dist', function () {
-  browserSync({
-    server: {
-      baseDir: projectConfig.path.distDir,
-      index: projectConfig.path.main,
-      browser: 'Google Chrome',
-      open: true
-    }
-  });
 });

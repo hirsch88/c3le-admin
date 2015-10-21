@@ -1,18 +1,16 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
 
-module c3.core.constants {
+module c3.common.components {
   'use strict';
 
-  export var Namespace = 'c3.core.constants';
+  export var Namespace = 'c3.common.components';
 
   export var ID = {
-    AppConfig: `${Namespace}.Config`
+    SpinnerSm: `${Namespace}.SpinnerSm`
   };
 
   angular
     .module(Namespace, [
-      ID.AppConfig
+      ID.SpinnerSm
     ]);
-
-
 }
